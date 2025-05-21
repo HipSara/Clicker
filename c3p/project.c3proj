@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 43203,
+	"savedWithRelease": 44000,
 	"name": "TutorialClicker",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -50,13 +50,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Tilemap",
-			"name": "Tilemap",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
@@ -74,11 +67,14 @@
 			"Upgrade",
 			"Dictionary",
 			"AJAX",
-			"Tilemap",
-			"TiledBackground"
+			"TiledBackground",
+			"Col_bottle",
+			"Col_butterfly",
+			"Col_sword"
 		],
 		"subfolders": []
 	},
+	"functionsName": "Functions",
 	"autosaveData": null,
 	"containers": [],
 	"families": {

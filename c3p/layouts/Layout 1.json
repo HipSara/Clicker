@@ -5,67 +5,7 @@
 			"name": "Game",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "Tilemap",
-					"properties": {
-						"initially-visible": true,
-						"tile-width": 32,
-						"tile-height": 32,
-						"tile-x-offset": 0,
-						"tile-y-offset": 0,
-						"tile-x-spacing": 0,
-						"tile-y-spacing": 0,
-						"tile-x-drawing-offset": 0,
-						"tile-y-drawing-offset": 0,
-						"drawing-mode": "top-to-right"
-					},
-					"uid": 11,
-					"sid": 168733262428254,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"ownData": {
-						"tilemapData": {
-							"width": 30,
-							"height": 53,
-							"max-width": 30,
-							"max-height": 53,
-							"data": "5,16,27,50x0,2x5,27,3x0,2x12,23,34,12,23,34,23,34,9x0,2,28x0,5,6,27,21x0,2,28x0,5,7,27,21x0,2,28x0,6,5,0,16,27,19x0,3,28x0,7,6,0,16,27,19x0,4,2,27x0,3,7,5,16,27,19x0,4,3,27x0,4,0,6,17,28,19x0,2,4,27x0,4,0,2,18,29,5,18x0,2,4,29x0,14,24,4,19x0,2,30x0,14,36,15x0,2x5,3x0,2,30x0,15,36,3x0,5x2,8x0,5,3x0,2,31x0,2,5,2,0,12,23,34,4x5,10x0,2,31x0,3,6,3,2x0,2x4,5x6,6x0,5,2x0,2,31x0,4,7,4,4x0,2x7,12,23,34,6x0,5,2x0,3,2,31x0,2,16x0,5,2x0,4,3,31x0,2,20x0,4,31x0,2,20x0,2,30x0,5,16,27,5,18x0,2,30x0,6,17,28,5,18x0,2,30x0,7,18,29,19x0,3,33x0,5,18x0,2,33x0,5,18x0,2,33x0,5,18x0,2,33x0,5,18x0,2,52x0,2,52x0,2,52x0,2,52x0,2,52x0,3,27x0"
-						},
-						"tile-width": 32,
-						"tile-height": 32,
-						"tile-x-offset": 0,
-						"tile-y-offset": 0,
-						"tile-x-spacing": 0,
-						"tile-y-spacing": 0
-					},
-					"instanceFolderItem": {
-						"sid": 168733262428254,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 960,
-						"height": 1708,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 354030341058501,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -126,10 +66,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 344981218783686,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": true,
@@ -182,10 +119,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 141434622936304,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -238,10 +172,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 939872129907930,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -282,10 +213,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 904552898918828,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -338,10 +266,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 487977232802509,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -378,18 +303,126 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 690065074245408,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 180,
-						"y": 546.5,
+						"x": 204,
+						"y": 547,
 						"width": 68,
 						"height": 51,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Col_bottle",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 11,
+					"sid": 229142122981988,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 229142122981988,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 412,
+						"y": 206,
+						"width": 106,
+						"height": 132,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Col_butterfly",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 13,
+					"sid": 256005499173127,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 256005499173127,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 406,
+						"y": 380,
+						"width": 127,
+						"height": 131,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Col_sword",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 14,
+					"sid": 512860307510395,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 512860307510395,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 404,
+						"y": 530,
+						"width": 98,
+						"height": 151,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
