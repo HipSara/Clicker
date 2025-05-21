@@ -1,0 +1,626 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Variable for taps"
+		},
+		{
+			"eventType": "variable",
+			"name": "Currency",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 919272127781115
+		},
+		{
+			"eventType": "variable",
+			"name": "TapNumber",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 559119910107418
+		},
+		{
+			"eventType": "variable",
+			"name": "Multiplier",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 935290196678315
+		},
+		{
+			"eventType": "variable",
+			"name": "TouchPanID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 948840492798627
+		},
+		{
+			"eventType": "variable",
+			"name": "TouchLastX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 433540801412145
+		},
+		{
+			"eventType": "comment",
+			"text": "Variables for time"
+		},
+		{
+			"eventType": "variable",
+			"name": "UnixtimeDiff",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 191498679347229
+		},
+		{
+			"eventType": "variable",
+			"name": "SecondsPassed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 745214651088806
+		},
+		{
+			"eventType": "variable",
+			"name": "UnixtimeClose",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 236963274458595
+		},
+		{
+			"eventType": "variable",
+			"name": "UnixtimeOpen",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 446144169395532
+		},
+		{
+			"eventType": "comment",
+			"text": "Variable for init"
+		},
+		{
+			"eventType": "variable",
+			"name": "FirstLoad",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 929174673920114
+		},
+		{
+			"eventType": "comment",
+			"text": "Variable for text"
+		},
+		{
+			"eventType": "variable",
+			"name": "LogMultiple",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 655090624839309
+		},
+		{
+			"eventType": "comment",
+			"text": "Log multiples:\n\n0-999 = 0 (up to 10^3)\n1000-999,999 = 1 (up to 10^6)\n1,000,000 - 1,000,000,000 = 2 (up to 10^9)"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Init",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Unixtime",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-suspend",
+									"objectClass": "System",
+									"sid": 164647656318722
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 339997961121215,
+									"parameters": {
+										"variable": "UnixtimeClose",
+										"value": "unixtime"
+									}
+								}
+							],
+							"sid": 843768885129222
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-resume",
+									"objectClass": "System",
+									"sid": 853356928513713
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 707680507727783,
+									"parameters": {
+										"variable": "UnixtimeOpen",
+										"value": "unixtime"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 750302170373784,
+									"parameters": {
+										"variable": "UnixtimeDiff",
+										"value": "UnixtimeOpen-UnixtimeClose"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 613628818831213,
+									"parameters": {
+										"variable": "SecondsPassed",
+										"value": "UnixtimeDiff+1000"
+									}
+								}
+							],
+							"sid": 860504578037450
+						}
+					],
+					"sid": 241719208250430
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 479504950043829
+						}
+					],
+					"actions": [],
+					"sid": 854185379082529,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 194374452450758,
+									"parameters": {
+										"variable": "FirstLoad"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "load",
+									"objectClass": "Dictionary",
+									"sid": 305269576255116,
+									"parameters": {
+										"json": "\"Dictionary.json\""
+									}
+								},
+								{
+									"id": "request-project-file",
+									"objectClass": "AJAX",
+									"sid": 341494335032104,
+									"parameters": {
+										"tag": "\"UnitLoad\"",
+										"file": "Dictionary.json"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 985250029232106,
+									"parameters": {
+										"variable": "FirstLoad",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 964661426581986
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 261754438189785,
+									"parameters": {
+										"variable": "FirstLoad"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "load",
+									"objectClass": "System",
+									"sid": 125149064539723,
+									"parameters": {
+										"slot": "\"mysave\""
+									}
+								}
+							],
+							"sid": 492004137487024
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 533700997051661,
+							"parameters": {
+								"tag": "\"UnitLoad\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Dictionary",
+							"sid": 158322076853874,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 527835657269931
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 919792816987042
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "LunaLevel",
+							"sid": 847614809290302,
+							"parameters": {
+								"text": "\"Level \" &Character.Level"
+							}
+						}
+					],
+					"sid": 458984353660052,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 104298148322310,
+									"parameters": {
+										"variable": "Currency",
+										"comparison": 3,
+										"value": "1000"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "CurrencyDisplay",
+									"sid": 425306358191151,
+									"parameters": {
+										"text": "Currency"
+									}
+								}
+							],
+							"sid": 965266235551190
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 621262513486306,
+									"parameters": {
+										"variable": "Currency",
+										"comparison": 4,
+										"value": "1001"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "CurrencyDisplay",
+									"sid": 125909887810673,
+									"parameters": {
+										"text": "round(100 * Currency / (10 ^ (3 * floor(floor(log10(Currency)) / 3))) ) / 100 & \" \" & Dictionary.Get(str(3 * floor(floor(log10(Currency)) / 3)))"
+									}
+								}
+							],
+							"sid": 195920360227704
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 636782398688969,
+							"parameters": {
+								"interval-seconds": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 302812190293404,
+							"parameters": {
+								"slot": "\"mysave\""
+							}
+						}
+					],
+					"sid": 432031974609273
+				}
+			],
+			"sid": 767527786130118
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PassiveEarning",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 460950299912119,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 474505176987618,
+							"parameters": {
+								"variable": "Currency",
+								"value": "1*Multiplier"
+							}
+						}
+					],
+					"sid": 605295819855558
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 766495939268105,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 404143051146194,
+							"parameters": {
+								"variable": "Currency",
+								"value": "TapNumber"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 559402037266195,
+							"parameters": {
+								"variable": "Currency",
+								"value": "TapNumber+Character.PassiveTapCount"
+							}
+						}
+					],
+					"sid": 772353414454222
+				}
+			],
+			"sid": 810506089196584
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CharacterEarning",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 581677609482724,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 0,
+								"value": "200"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Upgrade",
+							"sid": 127316185303192,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 966894953147638
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 833379688173573,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Upgrade"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Character",
+							"sid": 478766308610802,
+							"parameters": {
+								"instance-variable": "Level",
+								"value": "1"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 449152422793632,
+							"parameters": {
+								"variable": "Currency",
+								"value": "200"
+							}
+						}
+					],
+					"sid": 924880104143937
+				}
+			],
+			"sid": 622163293841462
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Character",
+					"sid": 836848889547382,
+					"parameters": {
+						"instance-variable": "Level",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Character",
+					"sid": 954232310866288,
+					"parameters": {
+						"instance-variable": "PassiveTapCount",
+						"value": "Character.Level"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Character",
+					"sid": 416204160020428,
+					"parameters": {
+						"instance-variable": "ActiveTapCount",
+						"value": "5*Character.Level"
+					}
+				}
+			],
+			"sid": 855112001628163
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 886311783366616,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 166296408252253,
+					"parameters": {
+						"variable": "Currency",
+						"value": "Character.ActiveTapCount"
+					}
+				}
+			],
+			"sid": 984949690274452
+		}
+	],
+	"sid": 672777573896994
+}

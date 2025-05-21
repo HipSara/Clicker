@@ -1,0 +1,82 @@
+{
+	"name": "Character",
+	"plugin-id": "Sprite",
+	"sid": 206231530725601,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "Level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 408951663373954
+		},
+		{
+			"name": "PassiveTapCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 151191367368126
+		},
+		{
+			"name": "ActiveTapCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 709081639474211
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 314,
+						"height": 364,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1954942,
+						"collisionPoly": {
+							"points": [
+								0.5159235668789809,
+								0.008241758241758242,
+								0.9872611464968153,
+								0.42032967032967034,
+								1,
+								0.7115384615384616,
+								0.9617834394904459,
+								0.8708791208791209,
+								0.4426751592356688,
+								1,
+								0.025477707006369428,
+								0.8434065934065934,
+								0.0031847133757961785,
+								0.717032967032967,
+								0.022292993630573247,
+								0.36538461538461536
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 429489373144624,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
