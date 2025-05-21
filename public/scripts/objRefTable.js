@@ -8,6 +8,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Dictionary,
 		C3.Plugins.AJAX,
 		C3.Plugins.TiledBg,
+		C3.Plugins.Date,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnSuspend,
 		C3.Plugins.System.Acts.SetVar,
@@ -25,14 +26,14 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Dictionary.Exps.Get,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Acts.SaveState,
-		C3.Plugins.Mouse.Cnds.OnClick,
+		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Sprite.Acts.SetVisible,
-		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Sprite.Acts.AddInstanceVar,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.Plugins.Sprite.Acts.SetInstanceVar
+		C3.Plugins.Sprite.Acts.SetInstanceVar,
+		C3.Plugins.Mouse.Cnds.OnClick
 	];
 };
 self.C3_JsPropNameTable = [
@@ -51,6 +52,8 @@ self.C3_JsPropNameTable = [
 	{Col_bottle: 0},
 	{Col_butterfly: 0},
 	{Col_sword: 0},
+	{Date: 0},
+	{Sprite: 0},
 	{Currency: 0},
 	{TapNumber: 0},
 	{Multiplier: 0},
@@ -76,5 +79,7 @@ self.InstanceType = {
 	TiledBackground: class extends self.ITiledBackgroundInstance {},
 	Col_bottle: class extends self.ISpriteInstance {},
 	Col_butterfly: class extends self.ISpriteInstance {},
-	Col_sword: class extends self.ISpriteInstance {}
+	Col_sword: class extends self.ISpriteInstance {},
+	Date: class extends self.IInstance {},
+	Sprite: class extends self.ISpriteInstance {}
 }

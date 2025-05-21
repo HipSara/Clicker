@@ -218,8 +218,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 204.5,
-						"y": 304,
+						"x": 220,
+						"y": 333,
 						"width": 221,
 						"height": 252,
 						"originX": 0.5,
@@ -308,8 +308,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 204,
-						"y": 547,
+						"x": 233,
+						"y": 576,
 						"width": 68,
 						"height": 51,
 						"originX": 0.5,
@@ -345,8 +345,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 412,
-						"y": 206,
+						"x": 311,
+						"y": 742,
 						"width": 106,
 						"height": 132,
 						"originX": 0.5,
@@ -382,8 +382,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 406,
-						"y": 380,
+						"x": 187,
+						"y": 742,
 						"width": 127,
 						"height": 131,
 						"originX": 0.5,
@@ -419,10 +419,47 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 404,
-						"y": 530,
+						"x": 86,
+						"y": 749,
 						"width": 98,
 						"height": 151,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 16,
+					"sid": 411978643660320,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 411978643660320,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 419,
+						"y": 740,
+						"width": 97,
+						"height": 147,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
