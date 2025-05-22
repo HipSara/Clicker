@@ -27,7 +27,13 @@
 			"sid": 709081639474211
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 273355935872906
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -64,6 +70,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.49044585987261147,
+								"y": 0.15384615384615385
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}

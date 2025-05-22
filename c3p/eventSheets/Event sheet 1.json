@@ -20,7 +20,7 @@
 			"name": "TapNumber",
 			"type": "number",
 			"initialValue": "1",
-			"comment": "",
+			"comment": "conteo de taps al ahcer click",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 559119910107418
@@ -54,6 +54,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 433540801412145
+		},
+		{
+			"eventType": "variable",
+			"name": "Clicks",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Numero de clicks en general",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 940783548408916
 		},
 		{
 			"eventType": "comment",
@@ -219,7 +229,117 @@
 							"sid": 479504950043829
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "NivelArray",
+							"sid": 290770472668075,
+							"parameters": {
+								"width": "9",
+								"height": "1",
+								"depth": "1"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 235735614694199,
+							"parameters": {
+								"x": "0",
+								"y": "0",
+								"z": "0",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 217462530451344,
+							"parameters": {
+								"x": "1",
+								"y": "0",
+								"z": "0",
+								"value": "30"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 130746895786051,
+							"parameters": {
+								"x": "2",
+								"y": "0",
+								"z": "0",
+								"value": "70"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 760555514302867,
+							"parameters": {
+								"x": "3",
+								"y": "0",
+								"z": "0",
+								"value": "150"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 296177239273827,
+							"parameters": {
+								"x": "4",
+								"y": "0",
+								"z": "0",
+								"value": "310"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 843128816111650,
+							"parameters": {
+								"x": "5",
+								"y": "0",
+								"z": "0",
+								"value": "630"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 293191620578785,
+							"parameters": {
+								"x": "6",
+								"y": "0",
+								"z": "0",
+								"value": "1270"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 757548053094746,
+							"parameters": {
+								"x": "7",
+								"y": "0",
+								"z": "0",
+								"value": "2550"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "NivelArray",
+							"sid": 733321442177492,
+							"parameters": {
+								"x": "8",
+								"y": "0",
+								"z": "0",
+								"value": "5110"
+							}
+						}
+					],
 					"sid": 854185379082529,
 					"children": [
 						{
@@ -258,6 +378,7 @@
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 985250029232106,
+									"disabled": true,
 									"parameters": {
 										"variable": "FirstLoad",
 										"value": "false"
@@ -284,6 +405,7 @@
 									"id": "load",
 									"objectClass": "System",
 									"sid": 125149064539723,
+									"disabled": true,
 									"parameters": {
 										"slot": "\"mysave\""
 									}
@@ -300,6 +422,7 @@
 							"id": "on-completed",
 							"objectClass": "AJAX",
 							"sid": 533700997051661,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"UnitLoad\""
 							}
@@ -450,6 +573,18 @@
 								"variable": "Currency",
 								"value": "1*Multiplier"
 							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Character",
+							"sid": 740247151158356,
+							"parameters": {
+								"object": "Star",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
 						}
 					],
 					"sid": 605295819855558
@@ -504,64 +639,55 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 581677609482724,
+							"sid": 192203878868206,
 							"parameters": {
-								"variable": "Currency",
+								"variable": "TapNumber",
 								"comparison": 0,
-								"value": "200"
+								"value": "10"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "Upgrade",
-							"sid": 127316185303192,
+							"id": "set-text",
+							"objectClass": "LunaLevel",
+							"sid": 573903114869670,
 							"parameters": {
-								"visibility": "visible"
+								"text": "\"Level \"& Character.Level"
 							}
 						}
 					],
 					"sid": 966894953147638
-				},
+				}
+			],
+			"sid": 622163293841462
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CharacterStuff",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 833379688173573,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Upgrade"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Character",
-							"sid": 478766308610802,
-							"parameters": {
-								"instance-variable": "Level",
-								"value": "1"
-							}
-						},
-						{
-							"id": "subtract-from-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 449152422793632,
+							"sid": 960124164837998,
 							"parameters": {
-								"variable": "Currency",
-								"value": "200"
+								"variable": "TapNumber",
+								"comparison": 0,
+								"value": "10"
 							}
 						}
 					],
-					"sid": 924880104143937
+					"actions": [],
+					"sid": 638330744349320
 				}
 			],
-			"sid": 622163293841462
+			"sid": 276675473409562
 		},
 		{
 			"eventType": "block",
@@ -734,7 +860,7 @@
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
-								"object-clicked": "Sprite"
+								"object-clicked": "Col_feather"
 							}
 						},
 						{
@@ -818,6 +944,19 @@
 				}
 			],
 			"sid": 889083086395243
+		},
+		{
+			"functionName": "GetClicksPerLvl",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 770529472458925
 		}
 	],
 	"sid": 672777573896994
