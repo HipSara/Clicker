@@ -256,7 +256,9 @@
 					"uid": 11,
 					"sid": 229142122981988,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Bottle_lvl": 0
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 229142122981988,
@@ -293,7 +295,9 @@
 					"uid": 13,
 					"sid": 256005499173127,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Butterfly_lvl": 0
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 256005499173127,

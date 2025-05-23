@@ -1305,23 +1305,12 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
-		() => 1001,
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			const v2 = p._GetNode(2).GetVar();
-			const n3 = p._GetNode(3);
-			const f4 = p._GetNode(4).GetBoundMethod();
-			const v5 = p._GetNode(5).GetVar();
-			return () => and(and((Math.round((100 * (v0.GetValue() / Math.pow(10, (3 * Math.floor((Math.floor(f1(v2.GetValue())) / 3))))))) / 100), " "), n3.ExpObject(((3 * Math.floor((Math.floor(f4(v5.GetValue())) / 3)))).toString()));
-		},
 		() => "mysave",
 		() => "PassiveEarning",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (1 * v0.GetValue());
 		},
-		() => "",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const n1 = p._GetNode(1);
@@ -1329,10 +1318,18 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "CharacterEarning",
 		() => "CharacterStuff",
-		() => "1 * pow(1.15, Character.Level)",
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (5 * n0.ExpInstVar());
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() - 1));
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (10220 * Math.pow(2, (v0.GetValue() - 10)));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpInstVar() + 1);
 		},
 		p => {
 			const n0 = p._GetNode(0);

@@ -56,16 +56,6 @@
 			"sid": 433540801412145
 		},
 		{
-			"eventType": "variable",
-			"name": "Clicks",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "Numero de clicks en general",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 940783548408916
-		},
-		{
 			"eventType": "comment",
 			"text": "Variables for time"
 		},
@@ -512,7 +502,8 @@
 									}
 								}
 							],
-							"sid": 195920360227704
+							"sid": 195920360227704,
+							"disabled": true
 						}
 					]
 				},
@@ -573,18 +564,6 @@
 								"variable": "Currency",
 								"value": "1*Multiplier"
 							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Character",
-							"sid": 740247151158356,
-							"parameters": {
-								"object": "Star",
-								"layer": "0",
-								"image-point": "1",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
 						}
 					],
 					"sid": 605295819855558
@@ -602,15 +581,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 404143051146194,
-							"parameters": {
-								"variable": "Currency",
-								"value": "TapNumber"
-							}
-						},
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
@@ -670,60 +640,110 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "GetClicksPerLvl",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Nivel",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 826826210871674
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 200532988401293,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 251697836024773,
+									"parameters": {
+										"variable": "Nivel",
+										"comparison": 3,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 275120064053193,
+									"parameters": {
+										"value": "NivelArray.At(Nivel - 1)"
+									}
+								}
+							],
+							"sid": 775942206996299
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 903137028603958,
+									"parameters": {
+										"variable": "Nivel",
+										"comparison": 4,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 511831583842588,
+									"parameters": {
+										"value": "10220 * 2 ^ (Nivel - 10)"
+									}
+								}
+							],
+							"sid": 522454948093429
+						}
+					]
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
+							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 960124164837998,
+							"sid": 827413238144396
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "GetClicksPerLvl",
+							"sid": 868396597655827,
+							"parameters": [
+								"Character.Level + 1"
+							]
+						},
+						{
+							"id": "set-text",
+							"objectClass": "LunaLevel",
+							"sid": 756491992937845,
 							"parameters": {
-								"variable": "TapNumber",
-								"comparison": 0,
-								"value": "10"
+								"text": "Character.Level"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 638330744349320
+					"sid": 473504922336699
 				}
 			],
 			"sid": 276675473409562
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Character",
-					"sid": 836848889547382,
-					"parameters": {
-						"instance-variable": "Level",
-						"comparison": 0,
-						"value": "2"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Character",
-					"sid": 282771074656591,
-					"parameters": {
-						"instance-variable": "PassiveTapCount",
-						"value": "\"1 * pow(1.15, Character.Level)\""
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Character",
-					"sid": 416204160020428,
-					"parameters": {
-						"instance-variable": "ActiveTapCount",
-						"value": "5*Character.Level"
-					}
-				}
-			],
-			"sid": 855112001628163
 		},
 		{
 			"eventType": "block",
@@ -772,6 +792,16 @@
 							}
 						},
 						{
+							"id": "compare-instance-variable",
+							"objectClass": "Col_bottle",
+							"sid": 105711201230973,
+							"parameters": {
+								"instance-variable": "Bottle_lvl",
+								"comparison": 3,
+								"value": "10"
+							}
+						},
+						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
 							"sid": 959993230467865,
@@ -793,12 +823,21 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 697201773170732,
+							"id": "set-instvar-value",
+							"objectClass": "Character",
+							"sid": 878166212425878,
 							"parameters": {
-								"variable": "TapNumber",
-								"value": "5"
+								"instance-variable": "PassiveTapCount",
+								"value": "TapNumber+Col_bottle.Bottle_lvl"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Col_bottle",
+							"sid": 304905360165843,
+							"parameters": {
+								"instance-variable": "Bottle_lvl",
+								"value": "1"
 							}
 						}
 					],
@@ -815,6 +854,16 @@
 								"mouse-button": "left",
 								"click-type": "clicked",
 								"object-clicked": "Col_butterfly"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Col_butterfly",
+							"sid": 999868643529920,
+							"parameters": {
+								"instance-variable": "Butterfly_lvl",
+								"comparison": 3,
+								"value": "10"
 							}
 						},
 						{
@@ -841,10 +890,19 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 778320171183375,
+							"sid": 247486345957282,
 							"parameters": {
 								"variable": "Multiplier",
-								"value": "5"
+								"value": "Multiplier+Col_butterfly.Butterfly_lvl"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Col_butterfly",
+							"sid": 345001632426085,
+							"parameters": {
+								"instance-variable": "Butterfly_lvl",
+								"value": "1"
 							}
 						}
 					],
@@ -944,19 +1002,6 @@
 				}
 			],
 			"sid": 889083086395243
-		},
-		{
-			"functionName": "GetClicksPerLvl",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 770529472458925
 		}
 	],
 	"sid": 672777573896994

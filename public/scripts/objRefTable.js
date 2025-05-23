@@ -24,17 +24,17 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.CompareVar,
-		C3.Plugins.System.Exps.log10,
-		C3.Plugins.Dictionary.Exps.Get,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Acts.SaveState,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.System.Acts.AddVar,
-		C3.Plugins.Sprite.Acts.Spawn,
-		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.Plugins.Sprite.Acts.SetInstanceVar,
+		C3.Plugins.System.Acts.SetFunctionReturnValue,
+		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.Mouse.Cnds.OnClick,
-		C3.Plugins.System.Acts.SubVar
+		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
+		C3.Plugins.System.Acts.SubVar,
+		C3.Plugins.Sprite.Acts.SetInstanceVar,
+		C3.Plugins.Sprite.Acts.AddInstanceVar
 	];
 };
 self.C3_JsPropNameTable = [
@@ -50,7 +50,9 @@ self.C3_JsPropNameTable = [
 	{Dictionary: 0},
 	{AJAX: 0},
 	{TiledBackground: 0},
+	{Bottle_lvl: 0},
 	{Col_bottle: 0},
+	{Butterfly_lvl: 0},
 	{Col_butterfly: 0},
 	{Col_sword: 0},
 	{Date: 0},
@@ -64,13 +66,13 @@ self.C3_JsPropNameTable = [
 	{Multiplier: 0},
 	{TouchPanID: 0},
 	{TouchLastX: 0},
-	{Clicks: 0},
 	{UnixtimeDiff: 0},
 	{SecondsPassed: 0},
 	{UnixtimeClose: 0},
 	{UnixtimeOpen: 0},
 	{FirstLoad: 0},
-	{LogMultiple: 0}
+	{LogMultiple: 0},
+	{Nivel: 0}
 ];
 
 self.InstanceType = {
