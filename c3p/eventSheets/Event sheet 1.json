@@ -591,7 +591,8 @@
 							}
 						}
 					],
-					"sid": 772353414454222
+					"sid": 772353414454222,
+					"disabled": true
 				}
 			],
 			"sid": 810506089196584
@@ -628,6 +629,54 @@
 						}
 					],
 					"sid": 966894953147638
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 110677653800970,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 463445977228586,
+							"parameters": {
+								"variable": "Currency",
+								"value": "Character.ActiveTapCount"
+							}
+						}
+					],
+					"sid": 185690577727071
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 343099920306374
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 411041352269730,
+							"parameters": {
+								"variable": "Currency",
+								"value": "Character.PassiveTapCount"
+							}
+						}
+					],
+					"sid": 416546348910977
 				}
 			],
 			"sid": 622163293841462
@@ -640,7 +689,17 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"functionName": "GetClicksPerLvl",
+					"eventType": "variable",
+					"name": "NivelTemp",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 626034729140917
+				},
+				{
+					"functionName": "GetLvlFromClicks",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -648,11 +707,18 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
-							"name": "Nivel",
+							"name": "Clicks",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
 							"sid": 826826210871674
+						},
+						{
+							"name": "Nivel",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 395568928094520
 						}
 					],
 					"eventType": "function-block",
@@ -664,53 +730,92 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
+									"id": "repeat",
 									"objectClass": "System",
-									"sid": 251697836024773,
+									"sid": 944937992829643,
 									"parameters": {
-										"variable": "Nivel",
+										"count": "NivelArray.Width"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 788462189708799,
+									"parameters": {
+										"first-value": "NivelArray.At(loopindex)",
 										"comparison": 3,
-										"value": "9"
+										"second-value": "Clicks"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-function-return-value",
-									"objectClass": "Functions",
-									"sid": 275120064053193,
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 626030391691972,
 									"parameters": {
-										"value": "NivelArray.At(Nivel - 1)"
+										"variable": "NivelTemp",
+										"value": "loopindex"
 									}
 								}
 							],
-							"sid": 775942206996299
+							"sid": 933941744658892,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 275460515739973,
+											"parameters": {
+												"first-value": "NivelArray.At(loopindex)",
+												"comparison": 3,
+												"second-value": "Clicks"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 167980627960380,
+											"parameters": {
+												"variable": "Nivel",
+												"value": "loopindex"
+											}
+										}
+									],
+									"sid": 196303319969623
+								}
+							]
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 903137028603958,
+									"sid": 340694444293880,
 									"parameters": {
-										"variable": "Nivel",
+										"first-value": "NivelTemp",
 										"comparison": 4,
-										"value": "9"
+										"second-value": "10"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-function-return-value",
-									"objectClass": "Functions",
-									"sid": 511831583842588,
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 384316570194771,
 									"parameters": {
-										"value": "10220 * 2 ^ (Nivel - 10)"
+										"variable": "NivelTemp",
+										"value": "10220*(2^NivelTemp-10)"
 									}
 								}
 							],
-							"sid": 522454948093429
+							"sid": 638258016804340
 						}
 					]
 				},
@@ -725,18 +830,19 @@
 					],
 					"actions": [
 						{
-							"callFunction": "GetClicksPerLvl",
-							"sid": 868396597655827,
+							"callFunction": "GetLvlFromClicks",
+							"sid": 413313353782100,
 							"parameters": [
-								"Character.Level + 1"
+								"Currency",
+								"0"
 							]
 						},
 						{
 							"id": "set-text",
 							"objectClass": "LunaLevel",
-							"sid": 756491992937845,
+							"sid": 244845827680644,
 							"parameters": {
-								"text": "Character.Level"
+								"text": "NivelTemp"
 							}
 						}
 					],
@@ -744,32 +850,6 @@
 				}
 			],
 			"sid": 276675473409562
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-click",
-					"objectClass": "Mouse",
-					"sid": 886311783366616,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 166296408252253,
-					"parameters": {
-						"variable": "Currency",
-						"value": "Character.ActiveTapCount"
-					}
-				}
-			],
-			"sid": 984949690274452
 		},
 		{
 			"eventType": "group",

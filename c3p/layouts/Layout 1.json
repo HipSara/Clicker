@@ -153,9 +153,9 @@
 					"sid": 904552898918828,
 					"tags": "",
 					"instanceVariables": {
-						"Level": 1,
-						"PassiveTapCount": 1,
-						"ActiveTapCount": 5
+						"Level": 0,
+						"PassiveTapCount": 0,
+						"ActiveTapCount": 1
 					},
 					"behaviors": {
 						"Anchor": {

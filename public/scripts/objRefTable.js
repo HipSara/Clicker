@@ -28,9 +28,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SaveState,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.System.Acts.AddVar,
-		C3.Plugins.System.Acts.SetFunctionReturnValue,
-		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.Mouse.Cnds.OnClick,
+		C3.Plugins.System.Cnds.Repeat,
+		C3.Plugins.Arr.Exps.Width,
+		C3.Plugins.System.Cnds.Compare,
+		C3.Plugins.Arr.Exps.At,
+		C3.Plugins.System.Exps.loopindex,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
@@ -72,6 +75,8 @@ self.C3_JsPropNameTable = [
 	{UnixtimeOpen: 0},
 	{FirstLoad: 0},
 	{LogMultiple: 0},
+	{NivelTemp: 0},
+	{Clicks: 0},
 	{Nivel: 0}
 ];
 

@@ -1311,32 +1311,32 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => (1 * v0.GetValue());
 		},
+		() => "CharacterEarning",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpInstVar();
+		},
+		() => "CharacterStuff",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject();
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => n0.ExpObject(f1());
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (10220 * (Math.pow(2, v0.GetValue()) - 10));
+		},
+		() => "Shop",
+		() => 500,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const n1 = p._GetNode(1);
 			return () => (v0.GetValue() + n1.ExpInstVar());
 		},
-		() => "CharacterEarning",
-		() => "CharacterStuff",
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => n0.ExpObject((v1.GetValue() - 1));
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (10220 * Math.pow(2, (v0.GetValue() - 10)));
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpInstVar() + 1);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpInstVar();
-		},
-		() => "Shop",
-		() => 500,
 		() => 5000,
 		() => 10000
 ];
