@@ -43,6 +43,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -82,6 +89,13 @@
 			"name": "Physics",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "z5hlh7jd3wc",
@@ -101,8 +115,10 @@
 			"Date",
 			"Col_feather",
 			"Progress_Bar",
-			"Star",
-			"NivelArray"
+			"NivelArray",
+			"Part_Star1",
+			"Parts_Star2",
+			"CurrencyOffline"
 		],
 		"subfolders": []
 	},

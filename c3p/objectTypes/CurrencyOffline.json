@@ -1,0 +1,16 @@
+{
+	"name": "CurrencyOffline",
+	"plugin-id": "Text",
+	"sid": 594833694889703,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 855833563673466
+		}
+	],
+	"effectTypes": []
+}

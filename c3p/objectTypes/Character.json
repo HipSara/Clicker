@@ -25,6 +25,34 @@
 			"desc": "",
 			"show": true,
 			"sid": 709081639474211
+		},
+		{
+			"name": "Squash",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 534040925337778
+		},
+		{
+			"name": "Stretch",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 954653766257390
+		},
+		{
+			"name": "Start_W",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 799164856123985
+		},
+		{
+			"name": "Start_H",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 561926072361795
 		}
 	],
 	"behaviorTypes": [
@@ -32,6 +60,11 @@
 			"behaviorId": "Anchor",
 			"name": "Anchor",
 			"sid": 273355935872906
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 470047496086214
 		}
 	],
 	"effectTypes": [],
@@ -75,6 +108,11 @@
 								"name": "Image Point 1",
 								"x": 0.49044585987261147,
 								"y": 0.15384615384615385
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.4840764331210191,
+								"y": 0.08241758241758242
 							}
 						],
 						"duration": 1,

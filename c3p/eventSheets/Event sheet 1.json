@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "TapNumber",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "5000",
 			"comment": "conteo de taps al ahcer click",
 			"isStatic": false,
 			"isConstant": false,
@@ -129,7 +129,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Log multiples:\n\n0-999 = 0 (up to 10^3)\n1000-999,999 = 1 (up to 10^6)\n1,000,000 - 1,000,000,000 = 2 (up to 10^9)"
+			"text": ""
 		},
 		{
 			"eventType": "group",
@@ -198,10 +198,52 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 613628818831213,
+									"sid": 676537205724615,
 									"parameters": {
 										"variable": "SecondsPassed",
-										"value": "UnixtimeDiff+1000"
+										"value": "ceil(UnixtimeDiff/1000)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 268777312662782,
+									"parameters": {
+										"variable": "Currency",
+										"value": "Currency +(Multiplier*SecondsPassed)"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "CurrencyOffline",
+									"sid": 230669139370831,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "CurrencyOffline",
+									"sid": 971491497597741,
+									"parameters": {
+										"text": "\"¡Ganaste \" & (Multiplier * SecondsPassed) & \" monedas mientras no estabas!\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 424821530097311,
+									"parameters": {
+										"seconds": "2.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "CurrencyOffline",
+									"sid": 408924317254299,
+									"parameters": {
+										"visibility": "invisible"
 									}
 								}
 							],
@@ -233,9 +275,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 235735614694199,
+							"sid": 353310067614759,
 							"parameters": {
-								"x": "0",
+								"x": "1",
 								"y": "0",
 								"z": "0",
 								"value": "10"
@@ -244,9 +286,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 217462530451344,
+							"sid": 679871972134905,
 							"parameters": {
-								"x": "1",
+								"x": "2",
 								"y": "0",
 								"z": "0",
 								"value": "30"
@@ -255,9 +297,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 130746895786051,
+							"sid": 707108306253594,
 							"parameters": {
-								"x": "2",
+								"x": "3",
 								"y": "0",
 								"z": "0",
 								"value": "70"
@@ -266,9 +308,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 760555514302867,
+							"sid": 728911852648439,
 							"parameters": {
-								"x": "3",
+								"x": "4",
 								"y": "0",
 								"z": "0",
 								"value": "150"
@@ -277,9 +319,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 296177239273827,
+							"sid": 395148471158259,
 							"parameters": {
-								"x": "4",
+								"x": "5",
 								"y": "0",
 								"z": "0",
 								"value": "310"
@@ -288,9 +330,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 843128816111650,
+							"sid": 236551218591375,
 							"parameters": {
-								"x": "5",
+								"x": "6",
 								"y": "0",
 								"z": "0",
 								"value": "630"
@@ -299,9 +341,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 293191620578785,
+							"sid": 500699013743234,
 							"parameters": {
-								"x": "6",
+								"x": "7",
 								"y": "0",
 								"z": "0",
 								"value": "1270"
@@ -310,9 +352,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 757548053094746,
+							"sid": 683892238227061,
 							"parameters": {
-								"x": "7",
+								"x": "8",
 								"y": "0",
 								"z": "0",
 								"value": "2550"
@@ -321,9 +363,9 @@
 						{
 							"id": "set-at-xyz",
 							"objectClass": "NivelArray",
-							"sid": 733321442177492,
+							"sid": 650274544308623,
 							"parameters": {
-								"x": "8",
+								"x": "9",
 								"y": "0",
 								"z": "0",
 								"value": "5110"
@@ -399,6 +441,15 @@
 									"parameters": {
 										"slot": "\"mysave\""
 									}
+								},
+								{
+									"id": "load",
+									"objectClass": "Dictionary",
+									"sid": 434524627292072,
+									"disabled": true,
+									"parameters": {
+										"json": "AJAX.LastData"
+									}
 								}
 							],
 							"sid": 492004137487024
@@ -418,17 +469,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "load",
-							"objectClass": "Dictionary",
-							"sid": 158322076853874,
-							"disabled": true,
-							"parameters": {
-								"json": "AJAX.LastData"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 527835657269931
 				},
 				{
@@ -566,7 +607,8 @@
 							}
 						}
 					],
-					"sid": 605295819855558
+					"sid": 605295819855558,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -604,32 +646,6 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 192203878868206,
-							"parameters": {
-								"variable": "TapNumber",
-								"comparison": 0,
-								"value": "10"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "LunaLevel",
-							"sid": 573903114869670,
-							"parameters": {
-								"text": "\"Level \"& Character.Level"
-							}
-						}
-					],
-					"sid": 966894953147638
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -779,7 +795,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 167980627960380,
+											"sid": 829038039143312,
 											"parameters": {
 												"variable": "Nivel",
 												"value": "loopindex"
@@ -840,9 +856,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "LunaLevel",
-							"sid": 244845827680644,
+							"sid": 376711534178412,
 							"parameters": {
-								"text": "NivelTemp"
+								"text": "\"Nivel: \" &NivelTemp"
 							}
 						}
 					],
@@ -1082,6 +1098,172 @@
 				}
 			],
 			"sid": 889083086395243
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Visual",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 847126456291439,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Character"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 741504876992472,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 457298072640304,
+									"parameters": {
+										"first-value": "Currency%2 ",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Character",
+									"sid": 728774435756685,
+									"parameters": {
+										"object": "Parts_Star2",
+										"layer": "1",
+										"image-point": "2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-spray-cone",
+									"objectClass": "Parts_Star2",
+									"sid": 300122175530518,
+									"parameters": {
+										"spray-cone": "360"
+									}
+								},
+								{
+									"id": "set-initial-speed-randomiser",
+									"objectClass": "Parts_Star2",
+									"sid": 145511573325099,
+									"parameters": {
+										"speed-randomiser": "50"
+									}
+								}
+							],
+							"sid": 872472223288775
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 546929265440959,
+									"parameters": {
+										"first-value": "Currency%2",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Character",
+									"sid": 680563441232872,
+									"parameters": {
+										"object": "Part_Star1",
+										"layer": "1",
+										"image-point": "2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-spray-cone",
+									"objectClass": "Part_Star1",
+									"sid": 388234373319377,
+									"parameters": {
+										"spray-cone": "360"
+									}
+								},
+								{
+									"id": "set-initial-speed-randomiser",
+									"objectClass": "Part_Star1",
+									"sid": 722713702216362,
+									"parameters": {
+										"speed-randomiser": "50"
+									}
+								}
+							],
+							"sid": 188899860579487
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Squash",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "Squash",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "Mod_H",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 807482034273748
+								},
+								{
+									"name": "Mod_W",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 602792865413157
+								},
+								{
+									"name": "Dur",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 415727714240605
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 230303679880720
+						}
+					],
+					"sid": 684369212890450
+				}
+			],
+			"sid": 655019594919060
 		}
 	],
 	"sid": 672777573896994
