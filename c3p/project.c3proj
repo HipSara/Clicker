@@ -118,7 +118,11 @@
 			"NivelArray",
 			"Part_Star1",
 			"Parts_Star2",
-			"CurrencyOffline"
+			"CurrencyOffline",
+			"Text_Bottle",
+			"Text_Butterly",
+			"Text_Feather",
+			"Text_Sword"
 		],
 		"subfolders": []
 	},
@@ -137,7 +141,8 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"SquashStretch"
 		],
 		"subfolders": []
 	},
@@ -159,7 +164,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Chicle-Regular.woff",
+					"type": "application/font-woff",
+					"sid": 703758168246368,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

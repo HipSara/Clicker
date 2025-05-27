@@ -1359,25 +1359,24 @@ self.C3_ExpressionFuncs = [
 		() => 5110,
 		p => {
 			const n0 = p._GetNode(0);
-			return () => and("Level ", n0.ExpInstVar());
-		},
-		() => 1000,
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => v0.GetValue();
+			return () => n0.ExpObject();
 		},
 		() => "mysave",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and("Level ", n0.ExpInstVar());
+		},
 		() => "PassiveEarning",
 		() => "CharacterEarning",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
 		},
-		() => "CharacterStuff",
 		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpObject();
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("Coins: ", v0.GetValue());
 		},
+		() => "CharacterStuff",
 		p => {
 			const n0 = p._GetNode(0);
 			const f1 = p._GetNode(1).GetBoundMethod();
@@ -1385,11 +1384,15 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
+			return () => v0.GetValue();
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
 			return () => (10220 * (Math.pow(2, v0.GetValue()) - 10));
 		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
-			return () => and("Nivel: ", v0.GetValue());
+			return () => and("Level: ", v0.GetValue());
 		},
 		() => "Shop",
 		() => 500,
@@ -1398,17 +1401,29 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => (v0.GetValue() + n1.ExpInstVar());
 		},
+		() => 1000,
 		() => 5000,
 		() => 10000,
 		() => "Visual",
+		() => "Squash",
+		() => 0.1,
+		() => "restore",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() * 0.9);
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() * 1.1);
+		},
+		() => 0.05,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() % 2);
 		},
 		() => "",
 		() => 360,
-		() => 50,
-		() => "Squash"
+		() => 50
 ];
 
 

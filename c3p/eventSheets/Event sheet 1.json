@@ -129,6 +129,30 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Variables for aspect"
+		},
+		{
+			"eventType": "variable",
+			"name": "OriginalHeight",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 175673185487877
+		},
+		{
+			"eventType": "variable",
+			"name": "OriginalWidth",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 374526522831793
+		},
+		{
+			"eventType": "comment",
 			"text": ""
 		},
 		{
@@ -370,6 +394,24 @@
 								"z": "0",
 								"value": "5110"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 593557986173219,
+							"parameters": {
+								"variable": "OriginalHeight",
+								"value": "Character.Height"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 570275958414993,
+							"parameters": {
+								"variable": "OriginalWidth",
+								"value": "Character.Width"
+							}
 						}
 					],
 					"sid": 854185379082529,
@@ -388,29 +430,9 @@
 							],
 							"actions": [
 								{
-									"id": "load",
-									"objectClass": "Dictionary",
-									"sid": 305269576255116,
-									"disabled": true,
-									"parameters": {
-										"json": "\"Dictionary.json\""
-									}
-								},
-								{
-									"id": "request-project-file",
-									"objectClass": "AJAX",
-									"sid": 341494335032104,
-									"disabled": true,
-									"parameters": {
-										"tag": "\"UnitLoad\"",
-										"file": "Dictionary.json"
-									}
-								},
-								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 985250029232106,
-									"disabled": true,
 									"parameters": {
 										"variable": "FirstLoad",
 										"value": "false"
@@ -437,7 +459,6 @@
 									"id": "load",
 									"objectClass": "System",
 									"sid": 125149064539723,
-									"disabled": true,
 									"parameters": {
 										"slot": "\"mysave\""
 									}
@@ -446,7 +467,6 @@
 									"id": "load",
 									"objectClass": "Dictionary",
 									"sid": 434524627292072,
-									"disabled": true,
 									"parameters": {
 										"json": "AJAX.LastData"
 									}
@@ -491,62 +511,7 @@
 							}
 						}
 					],
-					"sid": 458984353660052,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 104298148322310,
-									"parameters": {
-										"variable": "Currency",
-										"comparison": 3,
-										"value": "1000"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "CurrencyDisplay",
-									"sid": 425306358191151,
-									"parameters": {
-										"text": "Currency"
-									}
-								}
-							],
-							"sid": 965266235551190
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 621262513486306,
-									"parameters": {
-										"variable": "Currency",
-										"comparison": 4,
-										"value": "1001"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "CurrencyDisplay",
-									"sid": 125909887810673,
-									"parameters": {
-										"text": "round(100 * Currency / (10 ^ (3 * floor(floor(log10(Currency)) / 3))) ) / 100 & \" \" & Dictionary.Get(str(3 * floor(floor(log10(Currency)) / 3)))"
-									}
-								}
-							],
-							"sid": 195920360227704,
-							"disabled": true
-						}
-					]
+					"sid": 458984353660052
 				},
 				{
 					"eventType": "block",
@@ -650,12 +615,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-click",
+							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 110677653800970,
+							"sid": 773210142554676,
 							"parameters": {
 								"mouse-button": "left",
-								"click-type": "clicked"
+								"click-type": "clicked",
+								"object-clicked": "Character"
 							}
 						}
 					],
@@ -693,6 +659,27 @@
 						}
 					],
 					"sid": 416546348910977
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 641341101223403
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "CurrencyDisplay",
+							"sid": 663996901433333,
+							"parameters": {
+								"text": "\"Coins: \" &Currency"
+							}
+						}
+					],
+					"sid": 811922587957739
 				}
 			],
 			"sid": 622163293841462
@@ -856,9 +843,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "LunaLevel",
-							"sid": 376711534178412,
+							"sid": 473560500868696,
 							"parameters": {
-								"text": "\"Nivel: \" &NivelTemp"
+								"text": "\"Level: \" &NivelTemp"
 							}
 						}
 					],
@@ -1107,117 +1094,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 847126456291439,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Character"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 741504876992472,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 457298072640304,
-									"parameters": {
-										"first-value": "Currency%2 ",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Character",
-									"sid": 728774435756685,
-									"parameters": {
-										"object": "Parts_Star2",
-										"layer": "1",
-										"image-point": "2",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-spray-cone",
-									"objectClass": "Parts_Star2",
-									"sid": 300122175530518,
-									"parameters": {
-										"spray-cone": "360"
-									}
-								},
-								{
-									"id": "set-initial-speed-randomiser",
-									"objectClass": "Parts_Star2",
-									"sid": 145511573325099,
-									"parameters": {
-										"speed-randomiser": "50"
-									}
-								}
-							],
-							"sid": 872472223288775
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 546929265440959,
-									"parameters": {
-										"first-value": "Currency%2",
-										"comparison": 1,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Character",
-									"sid": 680563441232872,
-									"parameters": {
-										"object": "Part_Star1",
-										"layer": "1",
-										"image-point": "2",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-spray-cone",
-									"objectClass": "Part_Star1",
-									"sid": 388234373319377,
-									"parameters": {
-										"spray-cone": "360"
-									}
-								},
-								{
-									"id": "set-initial-speed-randomiser",
-									"objectClass": "Part_Star1",
-									"sid": 722713702216362,
-									"parameters": {
-										"speed-randomiser": "50"
-									}
-								}
-							],
-							"sid": 188899860579487
-						}
-					]
-				},
-				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "Squash",
@@ -1225,39 +1101,161 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"functionName": "Squash",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [
+							"eventType": "block",
+							"conditions": [
 								{
-									"name": "Mod_H",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"sid": 807482034273748
-								},
-								{
-									"name": "Mod_W",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"sid": 602792865413157
-								},
-								{
-									"name": "Dur",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"sid": 415727714240605
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 191844863697272,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "Character"
+									}
 								}
 							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 230303679880720
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Character",
+									"sid": 703643885595386,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Squash\"",
+										"property": "size",
+										"end-x": "Character.Height",
+										"end-y": "Character.Width",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 832816760073333,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Character",
+									"sid": 191832121647848,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"restore\"",
+										"property": "size",
+										"end-x": "OriginalHeight*0.9",
+										"end-y": "OriginalWidth*1.1",
+										"time": "0.05",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 453903124821342,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 797343518161644,
+											"parameters": {
+												"first-value": "Currency%2 ",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Character",
+											"sid": 270455507697213,
+											"parameters": {
+												"object": "Parts_Star2",
+												"layer": "1",
+												"image-point": "2",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-spray-cone",
+											"objectClass": "Parts_Star2",
+											"sid": 766013119246084,
+											"parameters": {
+												"spray-cone": "360"
+											}
+										},
+										{
+											"id": "set-initial-speed-randomiser",
+											"objectClass": "Parts_Star2",
+											"sid": 187805697378170,
+											"parameters": {
+												"speed-randomiser": "50"
+											}
+										}
+									],
+									"sid": 873122176962045
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 503169231522204,
+											"parameters": {
+												"first-value": "Currency%2",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Character",
+											"sid": 357066150791852,
+											"parameters": {
+												"object": "Part_Star1",
+												"layer": "1",
+												"image-point": "2",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-spray-cone",
+											"objectClass": "Part_Star1",
+											"sid": 814214693524300,
+											"parameters": {
+												"spray-cone": "360"
+											}
+										},
+										{
+											"id": "set-initial-speed-randomiser",
+											"objectClass": "Part_Star1",
+											"sid": 776887347728610,
+											"parameters": {
+												"speed-randomiser": "50"
+											}
+										}
+									],
+									"sid": 578931916916404
+								}
+							]
 						}
 					],
 					"sid": 684369212890450
