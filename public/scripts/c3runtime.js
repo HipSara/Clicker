@@ -1407,16 +1407,6 @@ self.C3_ExpressionFuncs = [
 		() => "Visual",
 		() => "Squash",
 		() => 0.1,
-		() => "restore",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue() * 0.9);
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue() * 1.1);
-		},
-		() => 0.05,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() % 2);

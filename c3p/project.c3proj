@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 44000,
+	"savedWithRelease": 44002,
 	"name": "TutorialClicker",
 	"runtime": "c3",
 	"useWorker": "auto",

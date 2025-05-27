@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "TapNumber",
 			"type": "number",
-			"initialValue": "5000",
+			"initialValue": "1",
 			"comment": "conteo de taps al ahcer click",
 			"isStatic": false,
 			"isConstant": false,
@@ -906,21 +906,21 @@
 							}
 						},
 						{
+							"id": "add-to-instvar",
+							"objectClass": "Col_bottle",
+							"sid": 742954847750431,
+							"parameters": {
+								"instance-variable": "Bottle_lvl",
+								"value": "1"
+							}
+						},
+						{
 							"id": "set-instvar-value",
 							"objectClass": "Character",
 							"sid": 878166212425878,
 							"parameters": {
 								"instance-variable": "PassiveTapCount",
 								"value": "TapNumber+Col_bottle.Bottle_lvl"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Col_bottle",
-							"sid": 304905360165843,
-							"parameters": {
-								"instance-variable": "Bottle_lvl",
-								"value": "1"
 							}
 						}
 					],
@@ -1118,34 +1118,8 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "Character",
-									"sid": 703643885595386,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"Squash\"",
-										"property": "size",
-										"end-x": "Character.Height",
-										"end-y": "Character.Width",
-										"time": "0.1",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 832816760073333,
-									"parameters": {
-										"seconds": "0.1",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "tween-two-properties",
-									"objectClass": "Character",
-									"sid": 191832121647848,
+									"sid": 939663554745584,
+									"disabled": true,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"restore\"",
@@ -1156,7 +1130,34 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no",
+										"ping-pong": "yes",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 653288885522162,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Character",
+									"sid": 818781182268220,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Squash\"",
+										"property": "size",
+										"end-x": "Character.Height",
+										"end-y": "Character.Width",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes",
 										"repeat-count": "1"
 									}
 								}
