@@ -1,0 +1,72 @@
+{
+	"name": "Leaf_pink",
+	"plugin-id": "Sprite",
+	"sid": 489542837509738,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 44,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6465622,
+						"collisionPoly": {
+							"points": [
+								0.38636363636363635,
+								0.03488372093023256,
+								0.4772727272727273,
+								0.046511627906976744,
+								0.8863636363636364,
+								0.4186046511627907,
+								0.9318181818181818,
+								0.4883720930232558,
+								0.9318181818181818,
+								0.6162790697674418,
+								0.7272727272727273,
+								0.9069767441860465,
+								0.6590909090909091,
+								0.9651162790697675,
+								0.6136363636363636,
+								0.9651162790697675,
+								0.11363636363636363,
+								0.5465116279069767,
+								0.06818181818181818,
+								0.5,
+								0.045454545454545456,
+								0.45348837209302323,
+								0.045454545454545456,
+								0.3953488372093023,
+								0.06818181818181818,
+								0.3488372093023256,
+								0.11363636363636363,
+								0.29069767441860467
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 346166825758601,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

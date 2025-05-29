@@ -1,0 +1,52 @@
+{
+	"name": "Shop_box",
+	"plugin-id": "Sprite",
+	"sid": 679502349052371,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 819,
+						"height": 547,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 164604,
+						"collisionPoly": {
+							"points": [
+								0.08058608058608059,
+								0.0018281535648994515,
+								1,
+								0.12248628884826325,
+								0.9206349206349206,
+								0.9981718464351006,
+								0.001221001221001221,
+								0.8793418647166362
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 157771551411339,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

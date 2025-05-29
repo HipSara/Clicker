@@ -125,14 +125,30 @@
 			"Glow_sword",
 			"Glow_feather",
 			"Glow_butterfly",
-			"Sprite6",
-			"Audio"
+			"bg",
+			"Audio",
+			"Bush_pink",
+			"Tree_red",
+			"Bush_yellow",
+			"Shop_box",
+			"Text_Shop",
+			"Leaf_red",
+			"Leaf_yellow",
+			"Leaf_pink"
 		],
 		"subfolders": []
 	},
 	"functionsName": "Functions",
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"Leaf_red",
+				"Leaf_yellow",
+				"Leaf_pink"
+			]
+		}
+	],
 	"families": {
 		"items": [],
 		"subfolders": []

@@ -1,0 +1,68 @@
+{
+	"name": "Tree_red",
+	"plugin-id": "Sprite",
+	"sid": 815318761197521,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 95,
+						"height": 109,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 781026,
+						"collisionPoly": {
+							"points": [
+								0.42105263157894735,
+								0.009174311926605505,
+								0.5473684210526316,
+								0.009174311926605505,
+								0.8631578947368421,
+								0.12844036697247707,
+								0.9894736842105263,
+								0.24770642201834864,
+								0.968421052631579,
+								0.5229357798165137,
+								0.4842105263157895,
+								0.9908256880733946,
+								0.42105263157894735,
+								0.981651376146789,
+								0,
+								0.42201834862385323,
+								0,
+								0.3394495412844037,
+								0.05263157894736842,
+								0.22935779816513763,
+								0.09473684210526316,
+								0.1926605504587156,
+								0.28421052631578947,
+								0.07339449541284404
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 653110083890493,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

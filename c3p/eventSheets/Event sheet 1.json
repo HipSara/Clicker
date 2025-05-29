@@ -232,7 +232,6 @@
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 268777312662782,
-									"disabled": true,
 									"parameters": {
 										"variable": "Currency",
 										"value": "Currency +(Multiplier*SecondsPassed)"
@@ -249,9 +248,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "CurrencyOffline",
-									"sid": 971491497597741,
+									"sid": 893947829882682,
 									"parameters": {
-										"text": "\"¡Ganaste \" & (Multiplier * SecondsPassed) & \" monedas mientras no estabas!\""
+										"text": "\"You've earned\" & (Multiplier * SecondsPassed) & \" coins while away!\""
 									}
 								},
 								{
@@ -444,9 +443,57 @@
 							}
 						},
 						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_bottle",
+							"sid": 701894355578533,
+							"parameters": {
+								"object": "Text_Bottle",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_butterfly",
+							"sid": 895556266661398,
+							"parameters": {
+								"object": "Text_Butterly",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_feather",
+							"sid": 647041688110891,
+							"parameters": {
+								"object": "Text_Feather",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_sword",
+							"sid": 942613111278535,
+							"parameters": {
+								"object": "Text_Sword",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
 							"id": "set-text",
 							"objectClass": "Text_Bottle",
-							"sid": 891654820126951,
+							"sid": 952323124205559,
 							"parameters": {
 								"text": "Col_bottle.Price"
 							}
@@ -454,7 +501,7 @@
 						{
 							"id": "set-text",
 							"objectClass": "Text_Butterly",
-							"sid": 457317352102248,
+							"sid": 355527575107244,
 							"parameters": {
 								"text": "Col_butterfly.Price"
 							}
@@ -462,7 +509,7 @@
 						{
 							"id": "set-text",
 							"objectClass": "Text_Feather",
-							"sid": 133429392858426,
+							"sid": 378982026751153,
 							"parameters": {
 								"text": "Col_feather.Price"
 							}
@@ -470,9 +517,17 @@
 						{
 							"id": "set-text",
 							"objectClass": "Text_Sword",
-							"sid": 339878438191215,
+							"sid": 565655334764264,
 							"parameters": {
 								"text": "Col_sword.Price"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Shop",
+							"sid": 180877608265789,
+							"parameters": {
+								"text": "\"Shop!\""
 							}
 						}
 					],
@@ -660,13 +715,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 773210142554676,
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 944179916160456,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Character"
+								"object": "Character"
 							}
 						}
 					],
@@ -920,6 +973,10 @@
 			"sid": 276675473409562
 		},
 		{
+			"eventType": "comment",
+			"text": "Bug with bottle"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Shop",
@@ -930,13 +987,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 438912725707813,
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 608276778861117,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Col_bottle"
+								"object": "Col_bottle"
 							}
 						},
 						{
@@ -1036,13 +1091,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 854784110226173,
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 943592397565783,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Col_butterfly"
+								"object": "Col_butterfly"
 							}
 						},
 						{
@@ -1142,13 +1195,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 367930828363129,
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 260581150953910,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Col_feather"
+								"object": "Col_feather"
 							}
 						},
 						{
@@ -1239,13 +1290,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 599863006438663,
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 832678488704271,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Col_sword"
+								"object": "Col_sword"
 							}
 						},
 						{
@@ -1353,13 +1402,11 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 191844863697272,
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 579892288952315,
 									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "Character"
+										"object": "Character"
 									}
 								}
 							],
@@ -1528,6 +1575,7 @@
 							"id": "spawn-another-object",
 							"objectClass": "Col_bottle",
 							"sid": 991500229219988,
+							"disabled": true,
 							"parameters": {
 								"object": "Glow_bottle",
 								"layer": "1",
@@ -1558,6 +1606,7 @@
 							"id": "spawn-another-object",
 							"objectClass": "Col_butterfly",
 							"sid": 408770296785406,
+							"disabled": true,
 							"parameters": {
 								"object": "Glow_butterfly",
 								"layer": "1",
