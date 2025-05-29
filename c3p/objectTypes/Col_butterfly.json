@@ -11,6 +11,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 557129080771016
+		},
+		{
+			"name": "Price",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 183039000216691
 		}
 	],
 	"behaviorTypes": [],

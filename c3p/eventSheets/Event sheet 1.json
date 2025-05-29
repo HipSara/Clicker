@@ -412,6 +412,23 @@
 								"variable": "OriginalWidth",
 								"value": "Character.Width"
 							}
+						},
+						{
+							"id": "scroll-to-object",
+							"objectClass": "System",
+							"sid": 340572672249351,
+							"parameters": {
+								"object": "Character"
+							}
+						},
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 136750753843075,
+							"parameters": {
+								"x": "(LayoutWidth / 2)\r\n",
+								"y": "(LayoutHeight / 2)"
+							}
 						}
 					],
 					"sid": 854185379082529,
@@ -664,9 +681,14 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
+							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 641341101223403
+							"sid": 849571510457814,
+							"parameters": {
+								"first-value": "Currency",
+								"comparison": 5,
+								"second-value": "0"
+							}
 						}
 					],
 					"actions": [
@@ -887,11 +909,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 959993230467865,
+							"sid": 153576431663545,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
-								"value": "500"
+								"value": "Col_bottle.Price"
 							}
 						}
 					],
@@ -899,10 +921,10 @@
 						{
 							"id": "subtract-from-eventvar",
 							"objectClass": "System",
-							"sid": 563633125291895,
+							"sid": 108168872837301,
 							"parameters": {
 								"variable": "Currency",
-								"value": "500"
+								"value": "Col_bottle.Price"
 							}
 						},
 						{
@@ -1259,6 +1281,66 @@
 						}
 					],
 					"sid": 684369212890450
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 427223824298047,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 5,
+								"value": "500"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_bottle",
+							"sid": 757584463327432,
+							"parameters": {
+								"object": "Sprite2",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 975450734662202
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 887686089592778,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 5,
+								"value": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_butterfly",
+							"sid": 126131008405887,
+							"parameters": {
+								"object": "Sprite5",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 174930639789035
 				}
 			],
 			"sid": 655019594919060

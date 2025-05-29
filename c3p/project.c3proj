@@ -114,7 +114,6 @@
 			"Col_sword",
 			"Date",
 			"Col_feather",
-			"Progress_Bar",
 			"NivelArray",
 			"Part_Star1",
 			"Parts_Star2",
@@ -122,7 +121,13 @@
 			"Text_Bottle",
 			"Text_Butterly",
 			"Text_Feather",
-			"Text_Sword"
+			"Text_Sword",
+			"Sprite",
+			"Sprite2",
+			"Sprite3",
+			"Sprite4",
+			"Sprite5",
+			"Sprite6"
 		],
 		"subfolders": []
 	},
@@ -281,8 +286,8 @@
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
-		"fullscreenQuality": "high",
-		"viewportFit": "auto",
+		"fullscreenQuality": "low",
+		"viewportFit": "cover",
 		"backgroundColor": [
 			0,
 			0,
@@ -304,7 +309,7 @@
 		],
 		"orientations": "portrait",
 		"webgpu": "auto",
-		"gpuPreference": "high-performance",
+		"gpuPreference": "low-power",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"sampling": "trilinear",
@@ -321,7 +326,7 @@
 		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 480,
-	"viewportHeight": 854,
+	"viewportWidth": 720,
+	"viewportHeight": 1280,
 	"firstLayout": null
 }
