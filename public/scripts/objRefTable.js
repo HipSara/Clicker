@@ -35,8 +35,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Acts.LoadState,
-		C3.Plugins.Dictionary.Acts.JSONLoad,
-		C3.Plugins.AJAX.Exps.LastData,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Acts.SaveState,

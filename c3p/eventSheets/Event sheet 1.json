@@ -491,14 +491,6 @@
 									"parameters": {
 										"slot": "\"mysave\""
 									}
-								},
-								{
-									"id": "load",
-									"objectClass": "Dictionary",
-									"sid": 434524627292072,
-									"parameters": {
-										"json": "AJAX.LastData"
-									}
 								}
 							],
 							"sid": 492004137487024
