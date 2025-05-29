@@ -1330,12 +1330,6 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			return () => (v0.GetValue() + (v1.GetValue() * v2.GetValue()));
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
 			return () => (and("¡Ganaste ", (v0.GetValue() * v1.GetValue())) + " monedas mientras no estabas!");
 		},
 		() => 2,
@@ -1367,17 +1361,16 @@ self.C3_ExpressionFuncs = [
 		},
 		() => -30,
 		() => "mainTheme",
-		() => "mysave",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpInstVar();
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => and("Level ", n0.ExpInstVar());
 		},
 		() => "PassiveEarning",
 		() => "CharacterEarning",
-		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpInstVar();
-		},
 		() => "pop",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -1405,13 +1398,18 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			return () => (n0.ExpInstVar() * Math.pow(1.15, n1.ExpInstVar()));
+			return () => (n0.ExpInstVar() * Math.ceil(Math.pow(1.15, n1.ExpInstVar())));
 		},
 		() => "",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const n1 = p._GetNode(1);
 			return () => (v0.GetValue() + n1.ExpInstVar());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => (n0.ExpInstVar() * Math.pow(1.15, n1.ExpInstVar()));
 		},
 		() => "Visual",
 		() => "Squash",

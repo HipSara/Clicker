@@ -232,6 +232,7 @@
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 268777312662782,
+									"disabled": true,
 									"parameters": {
 										"variable": "Currency",
 										"value": "Currency +(Multiplier*SecondsPassed)"
@@ -441,10 +442,46 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"mainTheme\""
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Bottle",
+							"sid": 891654820126951,
+							"parameters": {
+								"text": "Col_bottle.Price"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Butterly",
+							"sid": 457317352102248,
+							"parameters": {
+								"text": "Col_butterfly.Price"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Feather",
+							"sid": 133429392858426,
+							"parameters": {
+								"text": "Col_feather.Price"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Sword",
+							"sid": 339878438191215,
+							"parameters": {
+								"text": "Col_sword.Price"
+							}
 						}
 					],
 					"sid": 854185379082529,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Modificar guardado porque no funciona"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -462,6 +499,7 @@
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 985250029232106,
+									"disabled": true,
 									"parameters": {
 										"variable": "FirstLoad",
 										"value": "false"
@@ -488,6 +526,7 @@
 									"id": "load",
 									"objectClass": "System",
 									"sid": 125149064539723,
+									"disabled": true,
 									"parameters": {
 										"slot": "\"mysave\""
 									}
@@ -496,22 +535,6 @@
 							"sid": 492004137487024
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-completed",
-							"objectClass": "AJAX",
-							"sid": 533700997051661,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"UnitLoad\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 527835657269931
 				},
 				{
 					"eventType": "block",
@@ -551,6 +574,7 @@
 							"id": "save",
 							"objectClass": "System",
 							"sid": 302812190293404,
+							"disabled": true,
 							"parameters": {
 								"slot": "\"mysave\""
 							}
@@ -675,9 +699,12 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
+							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 343099920306374
+							"sid": 985896010815745,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
 						}
 					],
 					"actions": [
@@ -955,19 +982,19 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Character",
-							"sid": 966841515304791,
+							"sid": 140510345220109,
 							"parameters": {
 								"instance-variable": "PassiveTapCount",
-								"value": "Character.PassiveTapCount*1.15^Col_bottle.Bottle_lvl"
+								"value": "Character.PassiveTapCount*ceil(1.15^Col_bottle.Bottle_lvl)"
 							}
 						},
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Col_bottle",
-							"sid": 993309888065720,
+							"sid": 275921028499437,
 							"parameters": {
 								"instance-variable": "Price",
-								"value": "Col_bottle.BasePrice*1.15^Col_bottle.Bottle_lvl"
+								"value": "Col_bottle.BasePrice*ceil(1.15^Col_bottle.Bottle_lvl)"
 							}
 						},
 						{
@@ -1496,7 +1523,20 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_bottle",
+							"sid": 991500229219988,
+							"parameters": {
+								"object": "Glow_bottle",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
 					"sid": 975450734662202
 				},
 				{
@@ -1517,10 +1557,10 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Col_butterfly",
-							"sid": 126131008405887,
+							"sid": 408770296785406,
 							"parameters": {
 								"object": "Glow_butterfly",
-								"layer": "0",
+								"layer": "1",
 								"image-point": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
