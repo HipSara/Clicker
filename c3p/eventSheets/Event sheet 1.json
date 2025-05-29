@@ -429,6 +429,18 @@
 								"x": "(LayoutWidth / 2)\r\n",
 								"y": "(LayoutHeight / 2)"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 628101922666870,
+							"parameters": {
+								"audio-file": "theme_A_nice_little_village",
+								"loop": "not-looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"mainTheme\""
+							}
 						}
 					],
 					"sid": 854185379082529,
@@ -650,6 +662,18 @@
 							"parameters": {
 								"variable": "Currency",
 								"value": "Character.ActiveTapCount"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 973159661518707,
+							"parameters": {
+								"audio-file": "button_pop2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"pop\""
 							}
 						}
 					],
@@ -909,7 +933,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 153576431663545,
+							"sid": 613262489319288,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
@@ -921,7 +945,7 @@
 						{
 							"id": "subtract-from-eventvar",
 							"objectClass": "System",
-							"sid": 108168872837301,
+							"sid": 467563397545901,
 							"parameters": {
 								"variable": "Currency",
 								"value": "Col_bottle.Price"
@@ -939,10 +963,39 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Character",
-							"sid": 878166212425878,
+							"sid": 966841515304791,
 							"parameters": {
 								"instance-variable": "PassiveTapCount",
-								"value": "TapNumber+Col_bottle.Bottle_lvl"
+								"value": "Character.PassiveTapCount*1.15^Col_bottle.Bottle_lvl"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Col_bottle",
+							"sid": 993309888065720,
+							"parameters": {
+								"instance-variable": "Price",
+								"value": "Col_bottle.BasePrice*1.15^Col_bottle.Bottle_lvl"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_bottle",
+							"sid": 981959189438802,
+							"parameters": {
+								"object": "Text_Bottle",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Bottle",
+							"sid": 756811041192058,
+							"parameters": {
+								"text": "Col_bottle.Price"
 							}
 						}
 					],
@@ -974,11 +1027,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 284976189113498,
+							"sid": 922079839321910,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
-								"value": "1000"
+								"value": "Col_butterfly.Price"
 							}
 						}
 					],
@@ -986,10 +1039,10 @@
 						{
 							"id": "subtract-from-eventvar",
 							"objectClass": "System",
-							"sid": 700694904082208,
+							"sid": 430409173388065,
 							"parameters": {
 								"variable": "Currency",
-								"value": "1000"
+								"value": "Col_butterfly.Price"
 							}
 						},
 						{
@@ -1008,6 +1061,35 @@
 							"parameters": {
 								"instance-variable": "Butterfly_lvl",
 								"value": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Col_butterfly",
+							"sid": 568490535673280,
+							"parameters": {
+								"instance-variable": "Price",
+								"value": "Col_butterfly.BasePrice*1.15^Col_butterfly.Butterfly_lvl"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_butterfly",
+							"sid": 148888548173100,
+							"parameters": {
+								"object": "Text_Butterly",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Butterly",
+							"sid": 656839279068213,
+							"parameters": {
+								"text": "Col_butterfly.Price"
 							}
 						}
 					],
@@ -1029,11 +1111,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 444753104927146,
+							"sid": 198536751582907,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
-								"value": "5000"
+								"value": "Col_feather.Price"
 							}
 						}
 					],
@@ -1041,19 +1123,58 @@
 						{
 							"id": "subtract-from-eventvar",
 							"objectClass": "System",
-							"sid": 960088428274212,
+							"sid": 199638872654890,
 							"parameters": {
 								"variable": "Currency",
-								"value": "5000"
+								"value": "Col_feather.Price"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 545325337478998,
+							"disabled": true,
 							"parameters": {
 								"variable": "TapNumber",
 								"value": "10"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Col_feather",
+							"sid": 159326537683103,
+							"parameters": {
+								"instance-variable": "Feather_lvl",
+								"value": "Col_feather.BasePrice*1.15^Col_feather.Feather_lvl"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Col_feather",
+							"sid": 113394007504113,
+							"parameters": {
+								"instance-variable": "Feather_lvl",
+								"value": "1"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_feather",
+							"sid": 594110657339653,
+							"parameters": {
+								"object": "Text_Feather",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Feather",
+							"sid": 873709895818784,
+							"parameters": {
+								"text": "Col_feather.Price"
 							}
 						}
 					],
@@ -1075,11 +1196,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 472747411836723,
+							"sid": 554284927886249,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
-								"value": "10000"
+								"value": "Col_sword.Price"
 							}
 						}
 					],
@@ -1087,19 +1208,58 @@
 						{
 							"id": "subtract-from-eventvar",
 							"objectClass": "System",
-							"sid": 942159770151927,
+							"sid": 792656662189173,
 							"parameters": {
 								"variable": "Currency",
-								"value": "10000"
+								"value": "Col_sword.Price"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 793383728157517,
+							"disabled": true,
 							"parameters": {
 								"variable": "Multiplier",
 								"value": "10"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Col_sword",
+							"sid": 143062364471434,
+							"parameters": {
+								"instance-variable": "Price",
+								"value": "Col_sword.BasePrice*1.15^Col_sword.Sword_lvl"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Col_sword",
+							"sid": 853429794403744,
+							"parameters": {
+								"instance-variable": "Sword_lvl",
+								"value": "1"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_sword",
+							"sid": 413164505616917,
+							"parameters": {
+								"object": "Text_Sword",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Sword",
+							"sid": 948917574774291,
+							"parameters": {
+								"text": "Col_sword.Price"
 							}
 						}
 					],
@@ -1288,28 +1448,15 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 427223824298047,
+							"sid": 695487300514759,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
-								"value": "500"
+								"value": "Col_bottle.Price"
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Col_bottle",
-							"sid": 757584463327432,
-							"parameters": {
-								"object": "Sprite2",
-								"layer": "0",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 975450734662202
 				},
 				{
@@ -1318,11 +1465,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 887686089592778,
+							"sid": 973823117273707,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
-								"value": "1000"
+								"value": "Col_butterfly.Price"
 							}
 						}
 					],
@@ -1332,7 +1479,7 @@
 							"objectClass": "Col_butterfly",
 							"sid": 126131008405887,
 							"parameters": {
-								"object": "Sprite5",
+								"object": "Glow_butterfly",
 								"layer": "0",
 								"image-point": "0",
 								"create-hierarchy": false,

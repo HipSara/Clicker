@@ -18,6 +18,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 274749908489299
+		},
+		{
+			"name": "BasePrice",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 766614545221839
 		}
 	],
 	"behaviorTypes": [],

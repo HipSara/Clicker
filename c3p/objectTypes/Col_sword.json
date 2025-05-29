@@ -11,6 +11,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 311222166395979
+		},
+		{
+			"name": "Sword_lvl",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 769447233549868
+		},
+		{
+			"name": "BasePrice",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 521756647517426
 		}
 	],
 	"behaviorTypes": [],
