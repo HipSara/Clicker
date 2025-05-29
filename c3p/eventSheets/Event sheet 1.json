@@ -433,11 +433,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 628101922666870,
+							"sid": 533754405413611,
 							"parameters": {
 								"audio-file": "theme_A_nice_little_village",
 								"loop": "not-looping",
-								"volume": "-20",
+								"volume": "-30",
 								"stereo-pan": "0",
 								"tag-optional": "\"mainTheme\""
 							}
@@ -997,6 +997,18 @@
 							"parameters": {
 								"text": "Col_bottle.Price"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 715856436099248,
+							"parameters": {
+								"audio-file": "collectible_v2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 991089578848941
@@ -1091,6 +1103,18 @@
 							"parameters": {
 								"text": "Col_butterfly.Price"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 465008427996107,
+							"parameters": {
+								"audio-file": "collectible_v2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 880618780593704
@@ -1176,6 +1200,18 @@
 							"parameters": {
 								"text": "Col_feather.Price"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 324806245777982,
+							"parameters": {
+								"audio-file": "collectible_v2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 403279870010161
@@ -1260,6 +1296,18 @@
 							"sid": 948917574774291,
 							"parameters": {
 								"text": "Col_sword.Price"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 371652146683614,
+							"parameters": {
+								"audio-file": "collectible_v2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],

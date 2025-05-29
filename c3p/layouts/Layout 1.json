@@ -59,12 +59,12 @@
 						"expanded": true
 					},
 					"showing": true,
-					"locked": true,
+					"locked": false,
 					"world": {
-						"x": 366,
-						"y": 656,
-						"width": 2077,
-						"height": 1380,
+						"x": 465,
+						"y": 529,
+						"width": 2211,
+						"height": 1600,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -785,10 +785,10 @@
 						},
 						"Anchor": {
 							"properties": {
-								"left-edge": "window-left",
-								"top-edge": "window-top",
-								"right-edge": "window-right",
-								"bottom-edge": "window-bottom",
+								"left-edge": "none",
+								"top-edge": "none",
+								"right-edge": "none",
+								"bottom-edge": "none",
 								"enabled": true
 							}
 						}
