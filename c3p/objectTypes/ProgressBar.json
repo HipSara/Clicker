@@ -4,6 +4,14 @@
 	"sid": 602560870894709,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Progreso",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 484778367282924
+		}
+	],
 	"behaviorTypes": []
 }

@@ -163,7 +163,47 @@
 		},
 		{
 			"eventType": "comment",
-			"text": ""
+			"text": "Variables for level"
+		},
+		{
+			"eventType": "variable",
+			"name": "ClicksNivelActual",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 698054532231511
+		},
+		{
+			"eventType": "variable",
+			"name": "ClicksNivelSiguiente",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 842546826648196
+		},
+		{
+			"eventType": "variable",
+			"name": "NivelActual",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 470574494461525
+		},
+		{
+			"eventType": "variable",
+			"name": "Progress",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 829828827106443
 		},
 		{
 			"eventType": "group",
@@ -1020,6 +1060,15 @@
 							"parameters": {
 								"text": "\"Level: \" &NivelTemp"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 427770573291378,
+							"parameters": {
+								"variable": "NivelActual",
+								"value": "NivelTemp"
+							}
 						}
 					],
 					"sid": 473504922336699
@@ -1384,15 +1433,6 @@
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Col_sword",
-							"sid": 143062364471434,
-							"parameters": {
-								"instance-variable": "Price",
-								"value": "Col_sword.BasePrice*1.15^Col_sword.Sword_lvl"
-							}
-						},
-						{
 							"id": "add-to-instvar",
 							"objectClass": "Col_sword",
 							"sid": 853429794403744,
@@ -1411,6 +1451,15 @@
 								"image-point": "1",
 								"create-hierarchy": false,
 								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Col_sword",
+							"sid": 683157789207809,
+							"parameters": {
+								"instance-variable": "Price",
+								"value": "Col_sword.BasePrice*1.15^Col_sword.Sword_lvl"
 							}
 						},
 						{
@@ -1541,11 +1590,11 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "Character",
-											"sid": 270455507697213,
+											"sid": 425688859893799,
 											"parameters": {
 												"object": "Parts_Star2",
 												"layer": "1",
-												"image-point": "2",
+												"image-point": "int(random(11))",
 												"create-hierarchy": false,
 												"template-name": "\"\""
 											}
@@ -1587,11 +1636,11 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "Character",
-											"sid": 357066150791852,
+											"sid": 758053412821102,
 											"parameters": {
 												"object": "Part_Star1",
 												"layer": "1",
-												"image-point": "2",
+												"image-point": "int(random(11))",
 												"create-hierarchy": false,
 												"template-name": "\"\""
 											}
@@ -1681,6 +1730,62 @@
 						}
 					],
 					"sid": 174930639789035
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 922303247936210
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 210684704176079,
+							"parameters": {
+								"variable": "ClicksNivelActual",
+								"value": "NivelArray.At(NivelActual)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 179583517690177,
+							"parameters": {
+								"variable": "ClicksNivelSiguiente",
+								"value": "NivelArray.At(NivelActual + 1)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 308918802254731,
+							"parameters": {
+								"variable": "Progress",
+								"value": "(Currency - ClicksNivelActual) /(ClicksNivelSiguiente- ClicksNivelActual)"
+							}
+						},
+						{
+							"id": "set-progress",
+							"objectClass": "ProgressBar",
+							"sid": 478032036033977,
+							"parameters": {
+								"value": "clamp(Progress * 100, 0, 100)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_ProgressBar",
+							"sid": 655292448956064,
+							"parameters": {
+								"text": "int(Progress * 100) & \"%\""
+							}
+						}
+					],
+					"sid": 899931799011656
 				}
 			],
 			"sid": 655019594919060

@@ -53,8 +53,11 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
+		C3.Plugins.System.Exps.int,
+		C3.Plugins.System.Exps.random,
 		C3.Plugins.Particles.Acts.SetSprayCone,
-		C3.Plugins.Particles.Acts.SetSpeedRandomiser
+		C3.Plugins.Particles.Acts.SetSpeedRandomiser,
+		C3.Plugins.progressbar.Acts.SetProgress
 	];
 };
 self.C3_JsPropNameTable = [
@@ -110,7 +113,9 @@ self.C3_JsPropNameTable = [
 	{Leaf_red: 0},
 	{Leaf_yellow: 0},
 	{Leaf_pink: 0},
+	{Progreso: 0},
 	{ProgressBar: 0},
+	{Text_ProgressBar: 0},
 	{Currency: 0},
 	{TapNumber: 0},
 	{Multiplier: 0},
@@ -125,6 +130,10 @@ self.C3_JsPropNameTable = [
 	{OriginalHeight: 0},
 	{OriginalWidth: 0},
 	{hasSword: 0},
+	{ClicksNivelActual: 0},
+	{ClicksNivelSiguiente: 0},
+	{NivelActual: 0},
+	{Progress: 0},
 	{ClicksTemp: 0},
 	{NivelTemp: 0},
 	{Clicks: 0},
@@ -166,5 +175,6 @@ self.InstanceType = {
 	Leaf_red: class extends self.ISpriteInstance {},
 	Leaf_yellow: class extends self.ISpriteInstance {},
 	Leaf_pink: class extends self.ISpriteInstance {},
-	ProgressBar: class extends self.IProgressBarInstance {}
+	ProgressBar: class extends self.IProgressBarInstance {},
+	Text_ProgressBar: class extends self.ITextInstance {}
 }

@@ -156,7 +156,8 @@
 			"Leaf_red",
 			"Leaf_yellow",
 			"Leaf_pink",
-			"ProgressBar"
+			"ProgressBar",
+			"Text_ProgressBar"
 		],
 		"subfolders": []
 	},
