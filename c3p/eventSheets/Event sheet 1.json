@@ -152,6 +152,16 @@
 			"sid": 374526522831793
 		},
 		{
+			"eventType": "variable",
+			"name": "hasSword",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 697822871252486
+		},
+		{
 			"eventType": "comment",
 			"text": ""
 		},
@@ -811,6 +821,16 @@
 			"children": [
 				{
 					"eventType": "variable",
+					"name": "ClicksTemp",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 331382682834022
+				},
+				{
+					"eventType": "variable",
 					"name": "NivelTemp",
 					"type": "number",
 					"initialValue": "0",
@@ -844,9 +864,44 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 839358222691937,
+							"parameters": {
+								"variable": "ClicksTemp",
+								"value": "Clicks"
+							}
+						}
+					],
 					"sid": 200532988401293,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 175521118124680,
+									"parameters": {
+										"variable": "hasSword"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 386264591119838,
+									"parameters": {
+										"variable": "ClicksTemp",
+										"value": "Clicks *(1 - (0.05 + (Col_sword.Sword_lvl - 1) * 0.01))"
+									}
+								}
+							],
+							"sid": 220958773555862
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -861,11 +916,11 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 788462189708799,
+									"sid": 495176837850562,
 									"parameters": {
 										"first-value": "NivelArray.At(loopindex)",
 										"comparison": 3,
-										"second-value": "Clicks"
+										"second-value": "ClicksTemp"
 									}
 								}
 							],
@@ -888,11 +943,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 275460515739973,
+											"sid": 201807855799274,
 											"parameters": {
 												"first-value": "NivelArray.At(loopindex)",
 												"comparison": 3,
-												"second-value": "Clicks"
+												"second-value": "ClicksTemp"
 											}
 										}
 									],
@@ -1376,6 +1431,15 @@
 								"volume": "0",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 272032752205556,
+							"parameters": {
+								"variable": "hasSword",
+								"value": "true"
 							}
 						}
 					],

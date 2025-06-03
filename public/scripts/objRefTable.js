@@ -14,6 +14,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Particles,
 		C3.Behaviors.Physics,
 		C3.Plugins.Audio,
+		C3.Behaviors.Bullet,
+		C3.Behaviors.Sin,
+		C3.Plugins.progressbar,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnSuspend,
 		C3.Plugins.System.Acts.SetVar,
@@ -48,6 +51,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.Sprite.Acts.AddInstanceVar,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
+		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
 		C3.Plugins.Particles.Acts.SetSprayCone,
 		C3.Plugins.Particles.Acts.SetSpeedRandomiser
@@ -101,9 +105,12 @@ self.C3_JsPropNameTable = [
 	{Bush_yellow: 0},
 	{Shop_box: 0},
 	{Text_Shop: 0},
+	{Bullet: 0},
+	{Sine: 0},
 	{Leaf_red: 0},
 	{Leaf_yellow: 0},
 	{Leaf_pink: 0},
+	{ProgressBar: 0},
 	{Currency: 0},
 	{TapNumber: 0},
 	{Multiplier: 0},
@@ -117,6 +124,8 @@ self.C3_JsPropNameTable = [
 	{LogMultiple: 0},
 	{OriginalHeight: 0},
 	{OriginalWidth: 0},
+	{hasSword: 0},
+	{ClicksTemp: 0},
 	{NivelTemp: 0},
 	{Clicks: 0},
 	{Nivel: 0}
@@ -156,5 +165,6 @@ self.InstanceType = {
 	Text_Shop: class extends self.ITextInstance {},
 	Leaf_red: class extends self.ISpriteInstance {},
 	Leaf_yellow: class extends self.ISpriteInstance {},
-	Leaf_pink: class extends self.ISpriteInstance {}
+	Leaf_pink: class extends self.ISpriteInstance {},
+	ProgressBar: class extends self.IProgressBarInstance {}
 }

@@ -77,6 +77,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "progressbar",
+			"name": "Progress bar",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Anchor",
 			"name": "Anchor",
@@ -85,8 +92,22 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -134,21 +155,14 @@
 			"Text_Shop",
 			"Leaf_red",
 			"Leaf_yellow",
-			"Leaf_pink"
+			"Leaf_pink",
+			"ProgressBar"
 		],
 		"subfolders": []
 	},
 	"functionsName": "Functions",
 	"autosaveData": null,
-	"containers": [
-		{
-			"members": [
-				"Leaf_red",
-				"Leaf_yellow",
-				"Leaf_pink"
-			]
-		}
-	],
+	"containers": [],
 	"families": {
 		"items": [],
 		"subfolders": []

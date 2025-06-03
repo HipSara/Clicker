@@ -5,7 +5,18 @@
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 516328727275320
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 270992295413700
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

@@ -1028,40 +1028,39 @@
 					}
 				},
 				{
-					"type": "Leaf_red",
+					"type": "ProgressBar",
 					"properties": {
+						"value": 0,
+						"maximum": 100,
+						"tooltip": "",
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"id": "",
+						"class": ""
 					},
-					"uid": 29,
-					"sid": 254447110016125,
+					"uid": 32,
+					"sid": 364931425523304,
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"instanceFolderItem": {
-						"sid": 254447110016125,
+						"sid": 364931425523304,
 						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 52,
-						"y": -28,
-						"width": 42,
-						"height": 89,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 279,
+						"y": 81,
+						"width": 330,
+						"height": 72,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
 							1,
 							1
-						],
-						"angle": 2.376519517069527,
-						"zElevation": 0
+						]
 					}
 				},
 				{
@@ -1073,20 +1072,46 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 30,
-					"sid": 720063258036594,
+					"uid": 29,
+					"sid": 589257507843314,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
 					"instanceFolderItem": {
-						"sid": 720063258036594,
+						"sid": 589257507843314,
 						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": -13,
-						"y": 144,
+						"x": -1242,
+						"y": 238,
 						"width": 43,
 						"height": 90,
 						"originX": 0.5,
@@ -1102,6 +1127,69 @@
 					}
 				},
 				{
+					"type": "Leaf_red",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 30,
+					"sid": 779067064347213,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "triangle",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 779067064347213,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -1263.8047914460433,
+						"y": 838.4938042524755,
+						"width": 63.63995117283304,
+						"height": 89,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.376519517069527,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Leaf_pink",
 					"properties": {
 						"initially-visible": true,
@@ -1111,19 +1199,45 @@
 						"live-preview": false
 					},
 					"uid": 31,
-					"sid": 546595963525512,
+					"sid": 215237184913229,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
-						"sid": 546595963525512,
+						"sid": 215237184913229,
 						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": -19,
-						"y": 37,
+						"x": -1283,
+						"y": 551,
 						"width": 44,
 						"height": 86,
 						"originX": 0.5,
