@@ -653,7 +653,7 @@
 					"tags": "",
 					"instanceVariables": {
 						"Level": 0,
-						"PassiveTapCount": 1,
+						"PassiveTapCount": 0,
 						"ActiveTapCount": 1,
 						"Squash": 1,
 						"Stretch": 1,
@@ -961,7 +961,7 @@
 						"x": 600,
 						"y": 1062,
 						"width": 199,
-						"height": 207,
+						"height": 206.99999999999997,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1283,7 +1283,13 @@
 					"sid": 932750773803357,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 932750773803357,
 						"expanded": true
@@ -1295,6 +1301,84 @@
 						"y": 82,
 						"width": 267,
 						"height": 71,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text_floatingClicks",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Chicle-Regular",
+						"size": 27,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 34,
+					"sid": 970323447016267,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 970323447016267,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1522,
+						"y": -262,
+						"width": 74,
+						"height": 30,
 						"originX": 0,
 						"originY": 0,
 						"color": [

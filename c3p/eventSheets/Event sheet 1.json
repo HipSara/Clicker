@@ -794,9 +794,33 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"pop\""
 							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Character",
+							"sid": 378547622135012,
+							"parameters": {
+								"object": "Text_floatingClicks",
+								"layer": "1",
+								"image-point": "11",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_floatingClicks",
+							"sid": 599448783142008,
+							"parameters": {
+								"text": "\"x \" &Character.ActiveTapCount"
+							}
 						}
 					],
 					"sid": 185690577727071
+				},
+				{
+					"eventType": "comment",
+					"text": "add one click per second changing variable passivecount"
 				},
 				{
 					"eventType": "block",
@@ -1732,6 +1756,10 @@
 					"sid": 174930639789035
 				},
 				{
+					"eventType": "comment",
+					"text": "ProgressBar"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -1786,6 +1814,101 @@
 						}
 					],
 					"sid": 899931799011656
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 152588659683284,
+							"parameters": {
+								"variable": "Progress",
+								"comparison": 5,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-elem-attribute",
+							"objectClass": "ProgressBar",
+							"sid": 538714783484134,
+							"parameters": {
+								"attribute-name": "\"background-color\"",
+								"attribute-value": "rgb(100, 0, 180)"
+							}
+						}
+					],
+					"sid": 469089566272679
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 683386382586515
+						}
+					],
+					"actions": [],
+					"sid": 364826558083412,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 775011506638039,
+									"parameters": {
+										"variable": "Progress",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Text_ProgressBar",
+									"sid": 881006552218458,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Pulse\"",
+										"property": "position",
+										"end-x": "1.2",
+										"end-y": "1.2",
+										"time": "0.2",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Text_ProgressBar",
+									"sid": 406389693062984,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"PulseBack\"",
+										"property": "position",
+										"end-x": "1",
+										"end-y": "1",
+										"time": "0.2",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 729427906879019
+						}
+					]
 				}
 			],
 			"sid": 655019594919060

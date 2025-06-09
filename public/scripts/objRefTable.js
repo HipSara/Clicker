@@ -17,6 +17,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Bullet,
 		C3.Behaviors.Sin,
 		C3.Plugins.progressbar,
+		C3.Behaviors.Fade,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnSuspend,
 		C3.Plugins.System.Acts.SetVar,
@@ -57,7 +58,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.Particles.Acts.SetSprayCone,
 		C3.Plugins.Particles.Acts.SetSpeedRandomiser,
-		C3.Plugins.progressbar.Acts.SetProgress
+		C3.Plugins.progressbar.Acts.SetProgress,
+		C3.Plugins.progressbar.Acts.SetElemAttribute,
+		C3.Plugins.System.Cnds.TriggerOnce
 	];
 };
 self.C3_JsPropNameTable = [
@@ -116,6 +119,8 @@ self.C3_JsPropNameTable = [
 	{Progreso: 0},
 	{ProgressBar: 0},
 	{Text_ProgressBar: 0},
+	{Fade: 0},
+	{Text_floatingClicks: 0},
 	{Currency: 0},
 	{TapNumber: 0},
 	{Multiplier: 0},
@@ -176,5 +181,6 @@ self.InstanceType = {
 	Leaf_yellow: class extends self.ISpriteInstance {},
 	Leaf_pink: class extends self.ISpriteInstance {},
 	ProgressBar: class extends self.IProgressBarInstance {},
-	Text_ProgressBar: class extends self.ITextInstance {}
+	Text_ProgressBar: class extends self.ITextInstance {},
+	Text_floatingClicks: class extends self.ITextInstance {}
 }

@@ -1,0 +1,21 @@
+{
+	"name": "Text_floatingClicks",
+	"plugin-id": "Text",
+	"sid": 436760697081936,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 572812978896736
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 631058325420086
+		}
+	],
+	"effectTypes": []
+}

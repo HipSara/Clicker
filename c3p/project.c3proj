@@ -99,6 +99,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -157,7 +164,8 @@
 			"Leaf_yellow",
 			"Leaf_pink",
 			"ProgressBar",
-			"Text_ProgressBar"
+			"Text_ProgressBar",
+			"Text_floatingClicks"
 		],
 		"subfolders": []
 	},
