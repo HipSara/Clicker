@@ -50,6 +50,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Particles",
 			"name": "Particles",
 			"author": "Scirra",
@@ -158,14 +165,15 @@
 			"Bush_pink",
 			"Tree_red",
 			"Bush_yellow",
-			"Shop_box",
 			"Text_Shop",
 			"Leaf_red",
 			"Leaf_yellow",
 			"Leaf_pink",
 			"ProgressBar",
 			"Text_ProgressBar",
-			"Text_floatingClicks"
+			"Text_floatingClicks",
+			"Text_floatingLevel",
+			"shop_box"
 		],
 		"subfolders": []
 	},
