@@ -1,0 +1,23 @@
+{
+	"name": "Part_Star3",
+	"plugin-id": "Particles",
+	"sid": 609092143194172,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 41,
+		"height": 47,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 4760052,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

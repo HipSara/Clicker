@@ -50,6 +50,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.loopindex,
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Acts.CreateObject,
+		C3.Plugins.Particles.Acts.SetAngle,
+		C3.Plugins.Sprite.Acts.AddChild,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Acts.SubVar,
@@ -127,6 +129,7 @@ self.C3_JsPropNameTable = [
 	{IsMoving: 0},
 	{Direction: 0},
 	{Character_especial: 0},
+	{Part_Star3: 0},
 	{Currency: 0},
 	{TapNumber: 0},
 	{Multiplier: 0},
@@ -191,5 +194,6 @@ self.InstanceType = {
 	Text_floatingClicks: class extends self.ITextInstance {},
 	Text_floatingLevel: class extends self.ITextInstance {},
 	shop_box: class extends self.IWorldInstance {},
-	Character_especial: class extends self.ISpriteInstance {}
+	Character_especial: class extends self.ISpriteInstance {},
+	Part_Star3: class extends self.IParticlesInstance {}
 }

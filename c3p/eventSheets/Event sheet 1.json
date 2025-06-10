@@ -308,9 +308,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "CurrencyOffline",
-									"sid": 893947829882682,
+									"sid": 592380328548460,
 									"parameters": {
-										"text": "\"You've earned\" & (Multiplier * SecondsPassed) & \" coins while away!\""
+										"text": "\"You've earned \" & (Multiplier * SecondsPassed) & \" coins while away!\""
 									}
 								},
 								{
@@ -1145,6 +1145,43 @@
 								"y": "random(LayoutHeight / 2 - 50, 100)",
 								"create-hierarchy": false,
 								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Character_especial",
+							"sid": 838234362022020,
+							"parameters": {
+								"object": "Part_Star3",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Part_Star3",
+							"sid": 546853309132637,
+							"parameters": {
+								"angle": "180"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Character_especial",
+							"sid": 373805448797055,
+							"parameters": {
+								"child": "Part_Star3",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": false,
+								"destroy-with-parent": false
 							}
 						}
 					],

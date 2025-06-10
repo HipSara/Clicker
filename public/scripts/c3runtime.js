@@ -1366,7 +1366,7 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
-			return () => (and("You've earned", (v0.GetValue() * v1.GetValue())) + " coins while away!");
+			return () => (and("You've earned ", (v0.GetValue() * v1.GetValue())) + " coins while away!");
 		},
 		() => 2,
 		() => 9,
@@ -1456,6 +1456,7 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => f0(((f1() / 2) - 50), 100);
 		},
+		() => 180,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() * 0.2);
