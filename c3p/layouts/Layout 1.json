@@ -657,7 +657,7 @@
 					"tags": "",
 					"instanceVariables": {
 						"Level": 0,
-						"PassiveTapCount": 0,
+						"PassiveTapCount": 1,
 						"ActiveTapCount": 1,
 						"Squash": 1,
 						"Stretch": 1,

@@ -1209,11 +1209,11 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 860192781347800,
+									"sid": 229541267673700,
 									"parameters": {
 										"first-value": "random(100)",
 										"comparison": 3,
-										"second-value": "30"
+										"second-value": "10*Col_feather.Feather_lvl"
 									}
 								},
 								{
@@ -1467,21 +1467,21 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 247486345957282,
-							"parameters": {
-								"variable": "Multiplier",
-								"value": "Multiplier+Col_butterfly.Butterfly_lvl"
-							}
-						},
-						{
 							"id": "add-to-instvar",
 							"objectClass": "Col_butterfly",
-							"sid": 345001632426085,
+							"sid": 563108726086042,
 							"parameters": {
 								"instance-variable": "Butterfly_lvl",
 								"value": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Character",
+							"sid": 104016935844630,
+							"parameters": {
+								"instance-variable": "ActiveTapCount",
+								"value": "Character.ActiveTapCount+Col_butterfly.Butterfly_lvl"
 							}
 						},
 						{
@@ -1618,6 +1618,15 @@
 								"volume": "0",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 727524964589180,
+							"parameters": {
+								"variable": "hasGoldenBait",
+								"value": "true"
 							}
 						}
 					],

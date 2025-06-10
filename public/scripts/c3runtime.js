@@ -1458,6 +1458,10 @@ self.C3_ExpressionFuncs = [
 		},
 		() => 180,
 		p => {
+			const n0 = p._GetNode(0);
+			return () => (10 * n0.ExpInstVar());
+		},
+		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() * 0.2);
 		},
@@ -1468,9 +1472,9 @@ self.C3_ExpressionFuncs = [
 			return () => (n0.ExpInstVar() * Math.ceil(Math.pow(1.15, n1.ExpInstVar())));
 		},
 		p => {
-			const v0 = p._GetNode(0).GetVar();
+			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			return () => (v0.GetValue() + n1.ExpInstVar());
+			return () => (n0.ExpInstVar() + n1.ExpInstVar());
 		},
 		p => {
 			const n0 = p._GetNode(0);
