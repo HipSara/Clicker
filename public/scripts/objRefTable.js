@@ -48,6 +48,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Exps.Width,
 		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.System.Exps.loopindex,
+		C3.Plugins.System.Exps.random,
+		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Acts.SubVar,
@@ -56,7 +58,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
 		C3.Plugins.System.Exps.int,
-		C3.Plugins.System.Exps.random,
 		C3.Plugins.Particles.Acts.SetSprayCone,
 		C3.Plugins.Particles.Acts.SetSpeedRandomiser,
 		C3.Plugins.progressbar.Acts.SetProgress,
@@ -123,6 +124,9 @@ self.C3_JsPropNameTable = [
 	{Text_floatingClicks: 0},
 	{Text_floatingLevel: 0},
 	{shop_box: 0},
+	{IsMoving: 0},
+	{Direction: 0},
+	{Character_especial: 0},
 	{Currency: 0},
 	{TapNumber: 0},
 	{Multiplier: 0},
@@ -141,6 +145,7 @@ self.C3_JsPropNameTable = [
 	{ClicksNivelSiguiente: 0},
 	{NivelActual: 0},
 	{Progress: 0},
+	{TriggerCheck: 0},
 	{ClicksTemp: 0},
 	{NivelTemp: 0},
 	{Clicks: 0},
@@ -185,5 +190,6 @@ self.InstanceType = {
 	Text_ProgressBar: class extends self.ITextInstance {},
 	Text_floatingClicks: class extends self.ITextInstance {},
 	Text_floatingLevel: class extends self.ITextInstance {},
-	shop_box: class extends self.IWorldInstance {}
+	shop_box: class extends self.IWorldInstance {},
+	Character_especial: class extends self.ISpriteInstance {}
 }

@@ -1,0 +1,102 @@
+{
+	"name": "Character_especial",
+	"plugin-id": "Sprite",
+	"sid": 786503260726464,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "IsMoving",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 881968856895353
+		},
+		{
+			"name": "Direction",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 889494358814516
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 665629858397998
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 874124932501909
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 107,
+						"height": 124,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5927312,
+						"collisionPoly": {
+							"points": [
+								0.2897196261682243,
+								0.008064516129032258,
+								0.40186915887850466,
+								0.016129032258064516,
+								0.8785046728971962,
+								0.25,
+								0.9719626168224299,
+								0.47580645161290325,
+								0.9906542056074766,
+								0.5403225806451613,
+								0.9906542056074766,
+								0.6774193548387096,
+								0.9719626168224299,
+								0.7580645161290323,
+								0.9252336448598131,
+								0.8548387096774194,
+								0.8317757009345794,
+								0.9274193548387096,
+								0.794392523364486,
+								0.9435483870967742,
+								0.7383177570093458,
+								0.9596774193548387,
+								0.37383177570093457,
+								0.9919354838709677,
+								0.21495327102803738,
+								0.9112903225806451,
+								0.12149532710280374,
+								0.8145161290322581,
+								0.018691588785046728,
+								0.5645161290322581,
+								0.009345794392523364,
+								0.41935483870967744
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 542565668518407,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

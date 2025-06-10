@@ -173,7 +173,8 @@
 			"Text_ProgressBar",
 			"Text_floatingClicks",
 			"Text_floatingLevel",
-			"shop_box"
+			"shop_box",
+			"Character_especial"
 		],
 		"subfolders": []
 	},

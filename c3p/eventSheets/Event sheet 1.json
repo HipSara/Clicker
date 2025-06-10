@@ -206,6 +206,16 @@
 			"sid": 829828827106443
 		},
 		{
+			"eventType": "variable",
+			"name": "TriggerCheck",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 426038358548367
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Init",
@@ -1096,6 +1106,74 @@
 						}
 					],
 					"sid": 473504922336699
+				},
+				{
+					"eventType": "comment",
+					"text": "Special Character"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 654810200694733,
+							"parameters": {
+								"interval-seconds": "random(12,15)"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 206610906009676,
+							"parameters": {
+								"first-value": "random(100)",
+								"comparison": 3,
+								"second-value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 963513494708126,
+							"parameters": {
+								"object-to-create": "Character_especial",
+								"layer": "1",
+								"x": "0 - 1000",
+								"y": "random(LayoutHeight / 2 - 50, 100)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 165833833579885
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 771851862656978,
+							"parameters": {
+								"object": "Character_especial"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 720633572192948,
+							"parameters": {
+								"variable": "Currency",
+								"value": "Currency*0.2"
+							}
+						}
+					],
+					"sid": 411999320081230
 				}
 			],
 			"sid": 276675473409562
