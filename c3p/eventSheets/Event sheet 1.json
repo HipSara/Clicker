@@ -207,13 +207,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TriggerCheck",
-			"type": "number",
-			"initialValue": "1",
+			"name": "hasGoldenBait",
+			"type": "boolean",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 426038358548367
+			"sid": 554092725057768
 		},
 		{
 			"eventType": "group",
@@ -1121,71 +1121,165 @@
 							"parameters": {
 								"interval-seconds": "random(12,15)"
 							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 206610906009676,
-							"parameters": {
-								"first-value": "random(100)",
-								"comparison": 3,
-								"second-value": "10"
-							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 165833833579885,
+					"children": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 963513494708126,
-							"parameters": {
-								"object-to-create": "Character_especial",
-								"layer": "1",
-								"x": "0 - 1000",
-								"y": "random(LayoutHeight / 2 - 50, 100)",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 950623990717883,
+									"parameters": {
+										"first-value": "random(100)",
+										"comparison": 3,
+										"second-value": "10"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 836275067837635,
+									"parameters": {
+										"variable": "hasGoldenBait"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 532434346766850,
+									"parameters": {
+										"object-to-create": "Character_especial",
+										"layer": "1",
+										"x": "0 - 1000",
+										"y": "random(LayoutHeight / 2 - 50, 100)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Character_especial",
+									"sid": 924159971389483,
+									"parameters": {
+										"object": "Part_Star3",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Part_Star3",
+									"sid": 194301530766950,
+									"parameters": {
+										"angle": "180"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Character_especial",
+									"sid": 839614265209354,
+									"parameters": {
+										"child": "Part_Star3",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": true,
+										"transform-o": false,
+										"transform-z-elevation": true,
+										"transform-visibility": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 111058441859455
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Character_especial",
-							"sid": 838234362022020,
-							"parameters": {
-								"object": "Part_Star3",
-								"layer": "1",
-								"image-point": "1",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "Part_Star3",
-							"sid": 546853309132637,
-							"parameters": {
-								"angle": "180"
-							}
-						},
-						{
-							"id": "add-child",
-							"objectClass": "Character_especial",
-							"sid": 373805448797055,
-							"parameters": {
-								"child": "Part_Star3",
-								"transform-x": true,
-								"transform-y": true,
-								"transform-w": true,
-								"transform-h": true,
-								"transform-a": true,
-								"transform-o": false,
-								"transform-z-elevation": true,
-								"transform-visibility": false,
-								"destroy-with-parent": false
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 860192781347800,
+									"parameters": {
+										"first-value": "random(100)",
+										"comparison": 3,
+										"second-value": "30"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 158858719432766,
+									"parameters": {
+										"variable": "hasGoldenBait"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 414267182293560,
+									"parameters": {
+										"object-to-create": "Character_especial",
+										"layer": "1",
+										"x": "0 - 1000",
+										"y": "random(LayoutHeight / 2 - 50, 100)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Character_especial",
+									"sid": 868375390875503,
+									"parameters": {
+										"object": "Part_Star3",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Part_Star3",
+									"sid": 959908223161907,
+									"parameters": {
+										"angle": "180"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Character_especial",
+									"sid": 671809117300118,
+									"parameters": {
+										"child": "Part_Star3",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": true,
+										"transform-o": false,
+										"transform-z-elevation": true,
+										"transform-visibility": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 786996955587063
 						}
-					],
-					"sid": 165833833579885
+					]
 				},
 				{
 					"eventType": "block",

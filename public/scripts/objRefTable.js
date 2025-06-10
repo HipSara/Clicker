@@ -148,7 +148,7 @@ self.C3_JsPropNameTable = [
 	{ClicksNivelSiguiente: 0},
 	{NivelActual: 0},
 	{Progress: 0},
-	{TriggerCheck: 0},
+	{hasGoldenBait: 0},
 	{ClicksTemp: 0},
 	{NivelTemp: 0},
 	{Clicks: 0},
