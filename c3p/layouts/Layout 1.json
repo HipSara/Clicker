@@ -453,7 +453,7 @@
 						"text-direction": "ltr",
 						"icon-set": -1,
 						"initially-visible": true,
-						"origin": "top-left",
+						"origin": "top",
 						"read-aloud": false
 					},
 					"uid": 20,
@@ -472,7 +472,7 @@
 						"y": 1506,
 						"width": 110.6026618722459,
 						"height": 68.45814408428079,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0,
 						"color": [
 							1,
@@ -506,7 +506,7 @@
 						"text-direction": "ltr",
 						"icon-set": -1,
 						"initially-visible": true,
-						"origin": "top-left",
+						"origin": "top",
 						"read-aloud": false
 					},
 					"uid": 21,
@@ -525,7 +525,7 @@
 						"y": 1534,
 						"width": 116.96704526463617,
 						"height": 63.03691214993225,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0,
 						"color": [
 							1,
@@ -559,7 +559,7 @@
 						"text-direction": "ltr",
 						"icon-set": -1,
 						"initially-visible": true,
-						"origin": "top-left",
+						"origin": "top",
 						"read-aloud": false
 					},
 					"uid": 22,
@@ -578,7 +578,7 @@
 						"y": 1615,
 						"width": 123.86232402347514,
 						"height": 62.572179607813496,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0,
 						"color": [
 							1,
@@ -612,7 +612,7 @@
 						"text-direction": "ltr",
 						"icon-set": -1,
 						"initially-visible": true,
-						"origin": "top-left",
+						"origin": "top",
 						"read-aloud": false
 					},
 					"uid": 23,
@@ -631,7 +631,7 @@
 						"y": 1535,
 						"width": 124.17860895715694,
 						"height": 61.69182428982663,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0,
 						"color": [
 							1,
@@ -832,6 +832,14 @@
 						"BasePrice": 100
 					},
 					"behaviors": {},
+					"effects": {
+						"Grayscale": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 229142122981988,
 						"expanded": true
@@ -839,10 +847,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 158,
-						"y": 1058,
-						"width": 194,
-						"height": 183,
+						"x": 151.5,
+						"y": 1073.5,
+						"width": 180.95620740741379,
+						"height": 172.0519647972071,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -873,6 +881,14 @@
 						"BasePrice": 500
 					},
 					"behaviors": {},
+					"effects": {
+						"Grayscale": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 256005499173127,
 						"expanded": true
@@ -880,10 +896,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 305,
-						"y": 1061,
-						"width": 228,
-						"height": 187,
+						"x": 291.5,
+						"y": 1073.5,
+						"width": 204.90230946017908,
+						"height": 172.15086899085787,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -921,10 +937,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 453,
-						"y": 1066,
-						"width": 198,
-						"height": 203,
+						"x": 437.5,
+						"y": 1074.5,
+						"width": 175,
+						"height": 172,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -962,10 +978,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 600,
-						"y": 1062,
-						"width": 199,
-						"height": 206.99999999999997,
+						"x": 583.5,
+						"y": 1069.5,
+						"width": 178,
+						"height": 183.99999999999997,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1432,10 +1448,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1209,
-						"y": 23,
-						"width": 200,
-						"height": 30,
+						"x": 1873,
+						"y": -464,
+						"width": 246,
+						"height": 128,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -1517,7 +1533,7 @@
 				{
 					"type": "Part_Star3",
 					"properties": {
-						"rate": 1,
+						"rate": 5,
 						"spray-cone": 10,
 						"type": "continuous-spray",
 						"object": -1,
@@ -1605,14 +1621,6 @@
 	},
 	"sid": 187525382665893,
 	"nonworld-instances": [
-		{
-			"type": "Dictionary",
-			"properties": {},
-			"uid": 9,
-			"sid": 696800739057994,
-			"tags": "",
-			"instanceVariables": {}
-		},
 		{
 			"type": "NivelArray",
 			"properties": {

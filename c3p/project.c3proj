@@ -29,20 +29,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Date",
-			"name": "Date",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Dictionary",
-			"name": "Dictionary",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
@@ -131,6 +117,13 @@
 			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "grayscale",
+			"name": "Grayscale",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "z5hlh7jd3wc",
@@ -141,12 +134,10 @@
 			"Mouse",
 			"Character",
 			"LunaLevel",
-			"Dictionary",
 			"AJAX",
 			"Col_bottle",
 			"Col_butterfly",
 			"Col_sword",
-			"Date",
 			"Col_feather",
 			"NivelArray",
 			"Part_Star1",

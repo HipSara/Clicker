@@ -1297,10 +1297,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 720633572192948,
+							"sid": 478376428017157,
 							"parameters": {
 								"variable": "Currency",
-								"value": "Currency*0.2"
+								"value": "ceil(Currency*0.2)"
 							}
 						}
 					],
@@ -1917,7 +1917,42 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 695487300514759,
+							"sid": 270992106417321,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 2,
+								"value": "Col_bottle.Price"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Col_bottle",
+							"sid": 381739805676096,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Bottle",
+							"sid": 441828735993315,
+							"parameters": {
+								"color": "rgbEx(200, 50, 50)"
+							}
+						}
+					],
+					"sid": 238388250228341
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 685710929089303,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
@@ -1927,20 +1962,24 @@
 					],
 					"actions": [
 						{
-							"id": "spawn-another-object",
+							"id": "set-effect-enabled",
 							"objectClass": "Col_bottle",
-							"sid": 991500229219988,
-							"disabled": true,
+							"sid": 998784148560077,
 							"parameters": {
-								"object": "Glow_bottle",
-								"layer": "1",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"mode": "disable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Bottle",
+							"sid": 534166465352433,
+							"parameters": {
+								"color": "rgbEx(0, 0, 0)"
 							}
 						}
 					],
-					"sid": 975450734662202
+					"sid": 252654772129014
 				},
 				{
 					"eventType": "block",
@@ -1948,7 +1987,42 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 973823117273707,
+							"sid": 816400849167190,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 2,
+								"value": "Col_butterfly.Price"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Col_butterfly",
+							"sid": 596467399534230,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Butterly",
+							"sid": 381058471312876,
+							"parameters": {
+								"color": "rgbEx(200, 50, 50)"
+							}
+						}
+					],
+					"sid": 806156552651357
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 927956273724327,
 							"parameters": {
 								"variable": "Currency",
 								"comparison": 5,
@@ -1958,20 +2032,24 @@
 					],
 					"actions": [
 						{
-							"id": "spawn-another-object",
+							"id": "set-effect-enabled",
 							"objectClass": "Col_butterfly",
-							"sid": 408770296785406,
-							"disabled": true,
+							"sid": 198929724989001,
 							"parameters": {
-								"object": "Glow_butterfly",
-								"layer": "1",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"mode": "disable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Butterly",
+							"sid": 711486697428669,
+							"parameters": {
+								"color": "rgbEx(0, 0, 0)"
 							}
 						}
 					],
-					"sid": 174930639789035
+					"sid": 387461386511927
 				},
 				{
 					"eventType": "comment",
