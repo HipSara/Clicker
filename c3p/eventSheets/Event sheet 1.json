@@ -216,6 +216,16 @@
 			"sid": 554092725057768
 		},
 		{
+			"eventType": "variable",
+			"name": "NivelMax",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 646341214785390
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Init",
@@ -1102,24 +1112,60 @@
 							]
 						},
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 181992540708331,
+							"parameters": {
+								"variable": "NivelActual",
+								"value": "NivelMax"
+							}
+						},
+						{
 							"id": "set-text",
 							"objectClass": "LunaLevel",
-							"sid": 473560500868696,
+							"sid": 325168383237349,
 							"parameters": {
-								"text": "\"Level: \" &NivelTemp"
+								"text": "\"Level: \" &NivelMax"
+							}
+						}
+					],
+					"sid": 473504922336699
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 426226270305585,
+							"parameters": {
+								"first-value": "NivelTemp",
+								"comparison": 4,
+								"second-value": "NivelMax"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 333290516569999,
+							"parameters": {
+								"variable": "NivelMax",
+								"value": "NivelTemp"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 427770573291378,
+							"sid": 910558502933537,
 							"parameters": {
 								"variable": "NivelActual",
 								"value": "NivelTemp"
 							}
 						}
 					],
-					"sid": 473504922336699
+					"sid": 592358923287005
 				},
 				{
 					"eventType": "comment",
@@ -1404,6 +1450,14 @@
 							}
 						},
 						{
+							"id": "set-text",
+							"objectClass": "Text_Bottle",
+							"sid": 868609700210244,
+							"parameters": {
+								"text": "Col_bottle.Price"
+							}
+						},
+						{
 							"id": "spawn-another-object",
 							"objectClass": "Col_bottle",
 							"sid": 981959189438802,
@@ -1413,14 +1467,6 @@
 								"image-point": "1",
 								"create-hierarchy": false,
 								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Text_Bottle",
-							"sid": 756811041192058,
-							"parameters": {
-								"text": "Col_bottle.Price"
 							}
 						},
 						{
@@ -1508,6 +1554,14 @@
 							}
 						},
 						{
+							"id": "set-text",
+							"objectClass": "Text_Butterly",
+							"sid": 346379311388359,
+							"parameters": {
+								"text": "Col_butterfly.Price"
+							}
+						},
+						{
 							"id": "spawn-another-object",
 							"objectClass": "Col_butterfly",
 							"sid": 148888548173100,
@@ -1517,14 +1571,6 @@
 								"image-point": "1",
 								"create-hierarchy": false,
 								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Text_Butterly",
-							"sid": 656839279068213,
-							"parameters": {
-								"text": "Col_butterfly.Price"
 							}
 						},
 						{
@@ -1585,6 +1631,15 @@
 							}
 						},
 						{
+							"id": "add-to-instvar",
+							"objectClass": "Col_feather",
+							"sid": 814286398114847,
+							"parameters": {
+								"instance-variable": "Feather_lvl",
+								"value": "1"
+							}
+						},
+						{
 							"id": "set-instvar-value",
 							"objectClass": "Col_feather",
 							"sid": 159326537683103,
@@ -1594,12 +1649,11 @@
 							}
 						},
 						{
-							"id": "add-to-instvar",
-							"objectClass": "Col_feather",
-							"sid": 113394007504113,
+							"id": "set-text",
+							"objectClass": "Text_Feather",
+							"sid": 479401562239435,
 							"parameters": {
-								"instance-variable": "Feather_lvl",
-								"value": "1"
+								"text": "Col_feather.Price"
 							}
 						},
 						{
@@ -1612,14 +1666,6 @@
 								"image-point": "1",
 								"create-hierarchy": false,
 								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Text_Feather",
-							"sid": 873709895818784,
-							"parameters": {
-								"text": "Col_feather.Price"
 							}
 						},
 						{
@@ -1698,18 +1744,6 @@
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Col_sword",
-							"sid": 413164505616917,
-							"parameters": {
-								"object": "Text_Sword",
-								"layer": "0",
-								"image-point": "1",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
 							"id": "set-instvar-value",
 							"objectClass": "Col_sword",
 							"sid": 172624233494743,
@@ -1724,6 +1758,18 @@
 							"sid": 948917574774291,
 							"parameters": {
 								"text": "Col_sword.Price"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Col_sword",
+							"sid": 643584494458039,
+							"parameters": {
+								"object": "Text_Sword",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
