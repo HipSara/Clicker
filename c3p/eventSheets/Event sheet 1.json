@@ -589,67 +589,17 @@
 							"parameters": {
 								"text": "\"Shop!\""
 							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 993182874497865,
+							"parameters": {
+								"key": "\"save\""
+							}
 						}
 					],
-					"sid": 854185379082529,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Modificar guardado porque no funciona"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 194374452450758,
-									"parameters": {
-										"variable": "FirstLoad"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 985250029232106,
-									"disabled": true,
-									"parameters": {
-										"variable": "FirstLoad",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 964661426581986
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 261754438189785,
-									"parameters": {
-										"variable": "FirstLoad"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "load",
-									"objectClass": "System",
-									"sid": 125149064539723,
-									"disabled": true,
-									"parameters": {
-										"slot": "\"mysave\""
-									}
-								}
-							],
-							"sid": 492004137487024
-						}
-					]
+					"sid": 854185379082529
 				},
 				{
 					"eventType": "block",
@@ -673,29 +623,93 @@
 					"sid": 458984353660052
 				},
 				{
+					"eventType": "comment",
+					"text": "save"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 537415729941746,
+							"parameters": {
+								"key": "\"save\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 286266932292095,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 351478516775322,
+									"parameters": {
+										"first-value": "LocalStorage.ItemValue",
+										"comparison": 1,
+										"second-value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "load-from-json",
+									"objectClass": "System",
+									"sid": 198467641941424,
+									"parameters": {
+										"json": "\"save\""
+									}
+								},
+								{
+									"id": "parse",
+									"objectClass": "JSON",
+									"sid": 645495282688301,
+									"parameters": {
+										"data": "LocalStorage.ItemValue"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 295099469359030,
+									"parameters": {
+										"variable": "Currency",
+										"value": "JSON.Get(\"currency\")"
+									}
+								}
+							],
+							"sid": 952375652538019
+						}
+					]
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 636782398688969,
+							"sid": 832823963022420,
 							"parameters": {
-								"interval-seconds": "10"
+								"interval-seconds": "15"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 302812190293404,
-							"disabled": true,
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 132472843180899,
 							"parameters": {
-								"slot": "\"mysave\""
+								"key": "\"save\"",
+								"value": "\"{\"\"currency\"\":\" & currency &\r\n\",\"\"progress\"\":\" & progress &\r\n\",\"\"activeTapCount\"\":\" & character.activeTapCount &\r\n\",\"\"passiveTapCount\"\":\" & character.passiveTapCount &\r\n\",\"\"hasGoldenBait\"\":\" & int(hasGoldenBait) &\r\n\",\"\"hasSword\"\":\" & int(hasSword) & \"}\""
 							}
 						}
 					],
-					"sid": 432031974609273
+					"sid": 511589129844632
 				}
 			],
 			"sid": 767527786130118
@@ -1487,10 +1501,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Col_butterfly",
-							"sid": 568490535673280,
+							"sid": 364940755098595,
 							"parameters": {
 								"instance-variable": "Price",
-								"value": "Col_butterfly.BasePrice*1.15^Col_butterfly.Butterfly_lvl"
+								"value": "Col_butterfly.BasePrice*ceil(1.15^Col_butterfly.Butterfly_lvl)"
 							}
 						},
 						{
@@ -1698,10 +1712,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Col_sword",
-							"sid": 683157789207809,
+							"sid": 172624233494743,
 							"parameters": {
 								"instance-variable": "Price",
-								"value": "Col_sword.BasePrice*1.15^Col_sword.Sword_lvl"
+								"value": "Col_sword.BasePrice*ceil(1.15^Col_sword.Sword_lvl)"
 							}
 						},
 						{
