@@ -1,0 +1,14 @@
+{
+	"name": "ShopItems",
+	"plugin-id": "Sprite",
+	"sid": 670590690353273,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Col_feather",
+		"Col_bottle",
+		"Col_butterfly",
+		"Col_sword"
+	]
+}

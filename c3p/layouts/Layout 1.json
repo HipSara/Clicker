@@ -460,7 +460,13 @@
 					"sid": 738286366721650,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 738286366721650,
 						"expanded": true
@@ -513,7 +519,13 @@
 					"sid": 365905272781296,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 365905272781296,
 						"expanded": true
@@ -566,7 +578,13 @@
 					"sid": 395384198042731,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 395384198042731,
 						"expanded": true
@@ -619,7 +637,13 @@
 					"sid": 992375815914778,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 992375815914778,
 						"expanded": true
@@ -930,6 +954,14 @@
 						"BasePrice": 1000
 					},
 					"behaviors": {},
+					"effects": {
+						"Grayscale": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 411978643660320,
 						"expanded": true
@@ -971,6 +1003,14 @@
 						"BasePrice": 2500
 					},
 					"behaviors": {},
+					"effects": {
+						"Grayscale": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 512860307510395,
 						"expanded": true

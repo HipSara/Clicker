@@ -56,6 +56,16 @@
 			"sid": 433540801412145
 		},
 		{
+			"eventType": "variable",
+			"name": "MaxCurrency",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 579051904035478
+		},
+		{
 			"eventType": "comment",
 			"text": "Variables for time"
 		},
@@ -98,34 +108,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 446144169395532
-		},
-		{
-			"eventType": "comment",
-			"text": "Variable for init"
-		},
-		{
-			"eventType": "variable",
-			"name": "FirstLoad",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 929174673920114
-		},
-		{
-			"eventType": "comment",
-			"text": "Variable for text"
-		},
-		{
-			"eventType": "variable",
-			"name": "LogMultiple",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 655090624839309
 		},
 		{
 			"eventType": "comment",
@@ -513,51 +495,59 @@
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Col_bottle",
-							"sid": 701894355578533,
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Text_Bottle",
+							"sid": 631896234986083,
+							"behaviorType": "Pin",
 							"parameters": {
-								"object": "Text_Bottle",
-								"layer": "1",
+								"pin-to": "Col_bottle",
 								"image-point": "1",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Col_butterfly",
-							"sid": 895556266661398,
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Text_Butterly",
+							"sid": 382877360510490,
+							"behaviorType": "Pin",
 							"parameters": {
-								"object": "Text_Butterly",
-								"layer": "1",
+								"pin-to": "Col_butterfly",
 								"image-point": "1",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Col_feather",
-							"sid": 647041688110891,
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Text_Feather",
+							"sid": 147659784089051,
+							"behaviorType": "Pin",
 							"parameters": {
-								"object": "Text_Feather",
-								"layer": "1",
+								"pin-to": "Col_feather",
 								"image-point": "1",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Col_sword",
-							"sid": 942613111278535,
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Text_Sword",
+							"sid": 616878898015824,
+							"behaviorType": "Pin",
 							"parameters": {
-								"object": "Text_Sword",
-								"layer": "1",
+								"pin-to": "Col_sword",
 								"image-point": "1",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
 							}
 						},
 						{
@@ -604,6 +594,7 @@
 							"id": "get-item",
 							"objectClass": "LocalStorage",
 							"sid": 993182874497865,
+							"disabled": true,
 							"parameters": {
 								"key": "\"save\""
 							}
@@ -650,6 +641,7 @@
 					],
 					"actions": [],
 					"sid": 286266932292095,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -692,7 +684,8 @@
 									}
 								}
 							],
-							"sid": 952375652538019
+							"sid": 952375652538019,
+							"disabled": true
 						}
 					]
 				},
@@ -712,10 +705,10 @@
 						{
 							"id": "set-item",
 							"objectClass": "LocalStorage",
-							"sid": 132472843180899,
+							"sid": 817408232820125,
 							"parameters": {
 								"key": "\"save\"",
-								"value": "\"{\"\"currency\"\":\" & currency &\r\n\",\"\"progress\"\":\" & progress &\r\n\",\"\"activeTapCount\"\":\" & character.activeTapCount &\r\n\",\"\"passiveTapCount\"\":\" & character.passiveTapCount &\r\n\",\"\"hasGoldenBait\"\":\" & int(hasGoldenBait) &\r\n\",\"\"hasSword\"\":\" & int(hasSword) & \"}\""
+								"value": "\"{\"\"currency\"\":\" & currency &\r\n\",\"\"progress\"\":\" & progress &\r\n\",\"\"activeTapCount\"\":\" & character.activeTapCount &\r\n\",\"\"passiveTapCount\"\":\" & character.passiveTapCount &\r\n\",\"\"hasGoldenBait\"\":\" & int(hasGoldenBait) &\r\n\",\"\"nivelMaximoAlcanzado\"\":\" & NivelMax &\r\n\",\"\"hasSword\"\":\" & int(hasSword) & \"}\""
 							}
 						}
 					],
@@ -848,6 +841,15 @@
 							"parameters": {
 								"text": "\"x \" &Character.ActiveTapCount"
 							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 879938300256662,
+							"parameters": {
+								"variable": "MaxCurrency",
+								"value": "Character.ActiveTapCount"
+							}
 						}
 					],
 					"sid": 185690577727071
@@ -875,6 +877,15 @@
 							"sid": 411041352269730,
 							"parameters": {
 								"variable": "Currency",
+								"value": "Character.PassiveTapCount"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 917661921155323,
+							"parameters": {
+								"variable": "MaxCurrency",
 								"value": "Character.PassiveTapCount"
 							}
 						}
@@ -2112,6 +2123,141 @@
 					"sid": 387461386511927
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 290077328836992,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 2,
+								"value": "Col_feather.Price"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Col_feather",
+							"sid": 658652275971527,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Feather",
+							"sid": 832439962114341,
+							"parameters": {
+								"color": "rgbEx(200, 50, 50)"
+							}
+						}
+					],
+					"sid": 458535217824461
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 357732585390646,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 5,
+								"value": "Col_feather.Price"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Col_feather",
+							"sid": 295817812146819,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Feather",
+							"sid": 562183689593938,
+							"parameters": {
+								"color": "rgbEx(0, 0, 0)"
+							}
+						}
+					],
+					"sid": 487174426400801
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 860341768140324,
+							"parameters": {
+								"variable": "Currency",
+								"comparison": 2,
+								"value": "Col_sword.Price"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Col_sword",
+							"sid": 602691717048954,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Sword",
+							"sid": 315524530757006,
+							"parameters": {
+								"color": "rgbEx(250, 50, 50)"
+							}
+						}
+					],
+					"sid": 211118636645558
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 162758260401021
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Col_sword",
+							"sid": 741190348718678,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"grayscale\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Sword",
+							"sid": 975235341843863,
+							"parameters": {
+								"color": "rgbEx(0, 0, 0)"
+							}
+						}
+					],
+					"sid": 420210521459105
+				},
+				{
 					"eventType": "comment",
 					"text": "ProgressBar"
 				},
@@ -2128,36 +2274,36 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 210684704176079,
+							"sid": 597377745616480,
 							"parameters": {
 								"variable": "ClicksNivelActual",
-								"value": "NivelArray.At(NivelActual)"
+								"value": "NivelArray.At(NivelMax)"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 179583517690177,
+							"sid": 310958038069947,
 							"parameters": {
 								"variable": "ClicksNivelSiguiente",
-								"value": "NivelArray.At(NivelActual + 1)"
+								"value": "NivelArray.At(NivelMax + 1)"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 308918802254731,
+							"sid": 291631097969744,
 							"parameters": {
 								"variable": "Progress",
-								"value": "(Currency - ClicksNivelActual) /(ClicksNivelSiguiente- ClicksNivelActual)"
+								"value": "clamp((MaxCurrency - ClicksNivelActual) / (ClicksNivelSiguiente - ClicksNivelActual), 0, 1)"
 							}
 						},
 						{
 							"id": "set-progress",
 							"objectClass": "ProgressBar",
-							"sid": 478032036033977,
+							"sid": 956307956235688,
 							"parameters": {
-								"value": "clamp(Progress * 100, 0, 100)"
+								"value": "clamp(Progress*100, 0, 100)"
 							}
 						},
 						{
@@ -2177,10 +2323,10 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 152588659683284,
+							"sid": 987534638197226,
 							"parameters": {
 								"variable": "Progress",
-								"comparison": 5,
+								"comparison": 0,
 								"value": "1"
 							}
 						}
@@ -2197,6 +2343,10 @@
 						}
 					],
 					"sid": 469089566272679
+				},
+				{
+					"eventType": "comment",
+					"text": "no funciona"
 				},
 				{
 					"eventType": "block",
