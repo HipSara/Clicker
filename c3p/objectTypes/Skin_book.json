@@ -1,0 +1,68 @@
+{
+	"name": "Skin_book",
+	"plugin-id": "Sprite",
+	"sid": 795488547371062,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 117,
+						"height": 127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3765868,
+						"collisionPoly": {
+							"points": [
+								0.29914529914529914,
+								0.2204724409448819,
+								0.38461538461538464,
+								0.2204724409448819,
+								0.46153846153846156,
+								0.2283464566929134,
+								0.5555555555555556,
+								0.25984251968503935,
+								0.6153846153846154,
+								0.30708661417322836,
+								0.7606837606837606,
+								0.5905511811023622,
+								0.717948717948718,
+								0.6850393700787402,
+								0.5128205128205128,
+								0.7795275590551181,
+								0.452991452991453,
+								0.7795275590551181,
+								0.36752136752136755,
+								0.7165354330708661,
+								0.23931623931623933,
+								0.48031496062992124,
+								0.23931623931623933,
+								0.4251968503937008
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 718617103567964,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

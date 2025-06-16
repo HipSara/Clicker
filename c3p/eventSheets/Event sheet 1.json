@@ -1116,19 +1116,19 @@
 					"actions": [
 						{
 							"callFunction": "GetLvlFromClicks",
-							"sid": 413313353782100,
+							"sid": 490341743997515,
 							"parameters": [
-								"Currency",
+								"MaxCurrency",
 								"0"
 							]
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 181992540708331,
+							"sid": 350787828189482,
 							"parameters": {
 								"variable": "NivelActual",
-								"value": "NivelMax"
+								"value": "NivelTemp"
 							}
 						},
 						{
@@ -1137,6 +1137,15 @@
 							"sid": 325168383237349,
 							"parameters": {
 								"text": "\"Level: \" &NivelMax"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 229985525872401,
+							"parameters": {
+								"variable": "NivelMax",
+								"value": "max(NivelTemp,NivelMax)"
 							}
 						}
 					],
@@ -1371,6 +1380,15 @@
 							"sid": 478376428017157,
 							"parameters": {
 								"variable": "Currency",
+								"value": "ceil(Currency*0.2)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 562249919098048,
+							"parameters": {
+								"variable": "MaxCurrency",
 								"value": "ceil(Currency*0.2)"
 							}
 						}
@@ -2418,6 +2436,467 @@
 				}
 			],
 			"sid": 655019594919060
+		},
+		{
+			"eventType": "comment",
+			"text": "events for skin change"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 669755671018719,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 513469925972009,
+					"parameters": {
+						"object": "Skin_book",
+						"layer": "1",
+						"image-point": "5",
+						"create-hierarchy": false,
+						"template-name": "\"Lvl1_skin\""
+					}
+				}
+			],
+			"sid": 399088051342782
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 658993652910484,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Skin_book",
+					"sid": 374627628421368
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 270212049365465,
+					"parameters": {
+						"object": "Lvl2_skin",
+						"layer": "1",
+						"image-point": "4",
+						"create-hierarchy": false,
+						"template-name": "\"lvl2_skin\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 607574086456869,
+					"parameters": {
+						"object": "Lvl2_skin",
+						"layer": "1",
+						"image-point": "5",
+						"create-hierarchy": false,
+						"template-name": "\"lvl2_skin\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 635691059951288,
+					"parameters": {
+						"object": "Lvl2_skin",
+						"layer": "1",
+						"image-point": "6",
+						"create-hierarchy": false,
+						"template-name": "\"lvl2_skin\""
+					}
+				}
+			],
+			"sid": 750704633886810
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 200275028226887,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Lvl2_skin",
+					"sid": 886382267781721
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 169248965483918,
+					"parameters": {
+						"object": "Skin_",
+						"layer": "1",
+						"image-point": "5",
+						"create-hierarchy": false,
+						"template-name": "\"lvl3_skin\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 894495596211736,
+					"parameters": {
+						"object": "Skin_",
+						"layer": "1",
+						"image-point": "6",
+						"create-hierarchy": false,
+						"template-name": "\"lvl3_skin\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 957302506810845,
+					"parameters": {
+						"object": "Skin_",
+						"layer": "1",
+						"image-point": "12",
+						"create-hierarchy": false,
+						"template-name": "\"lvl3_skin\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 813858317416955,
+					"parameters": {
+						"object": "Skin_",
+						"layer": "1",
+						"image-point": "13",
+						"create-hierarchy": false,
+						"template-name": "\"lvl3_skin\""
+					}
+				}
+			],
+			"sid": 512476081342378
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 729551080515845,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Skin_",
+					"sid": 942218288152437
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 659736293970273,
+					"parameters": {
+						"object": "Leaf_red",
+						"layer": "1",
+						"image-point": "5",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 938014851911342,
+					"parameters": {
+						"object": "Leaf_pink",
+						"layer": "1",
+						"image-point": "6",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 251703233983855,
+					"parameters": {
+						"object": "Leaf_yellow",
+						"layer": "1",
+						"image-point": "8",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 504765913444173
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 355426404427622,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Leaf_pink",
+					"sid": 900985458603090
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Leaf_red",
+					"sid": 722844251408539
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Leaf_yellow",
+					"sid": 912989712650059
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 922091266020535,
+					"parameters": {
+						"object": "slime_skin",
+						"layer": "1",
+						"image-point": "12",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "slime_skin",
+					"sid": 367666310521084,
+					"parameters": {
+						"angle": "270"
+					}
+				}
+			],
+			"sid": 402147846763533
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 978050943460737,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "6"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "slime_skin",
+					"sid": 558342532120976
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 891884426913274,
+					"parameters": {
+						"object": "skin_tea",
+						"layer": "1",
+						"image-point": "14",
+						"create-hierarchy": false,
+						"template-name": "\"tea\""
+					}
+				}
+			],
+			"sid": 533223796994526
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 241674680002149,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "7"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "skin_tea",
+					"sid": 525552777007950
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 438781407196239,
+					"parameters": {
+						"object": "skin_lumbrjack2",
+						"layer": "1",
+						"image-point": "4",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 986331062296912,
+					"parameters": {
+						"object": "skin_lumberkack1",
+						"layer": "1",
+						"image-point": "12",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 152714825687274
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 111804801233438,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "8"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "skin_lumberkack1",
+					"sid": 810547560355384
+				},
+				{
+					"id": "destroy",
+					"objectClass": "skin_lumbrjack2",
+					"sid": 170157323595931
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 620746303415343,
+					"parameters": {
+						"object": "Bush_pink",
+						"layer": "1",
+						"image-point": "12",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Character",
+					"sid": 159745236644654,
+					"parameters": {
+						"object": "Bush_yellow",
+						"layer": "1",
+						"image-point": "13",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 411628532562425
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 178065368235960,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 414859932655511
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 771040883667327,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 702070213378345
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 632719137694757,
+					"parameters": {
+						"variable": "NivelMax",
+						"comparison": 0,
+						"value": "10"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 217587912245241
 		}
 	],
 	"sid": 672777573896994

@@ -1,0 +1,66 @@
+{
+	"name": "Skin_",
+	"plugin-id": "Sprite",
+	"sid": 729523604175241,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 89,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9679589,
+						"collisionPoly": {
+							"points": [
+								0.7191011235955056,
+								0.02,
+								1,
+								0.7,
+								1,
+								0.76,
+								0.8651685393258427,
+								1,
+								0.8089887640449438,
+								1,
+								0.2808988764044944,
+								0.98,
+								0.0898876404494382,
+								0.88,
+								0.0449438202247191,
+								0.82,
+								0.011235955056179775,
+								0.76,
+								0.02247191011235955,
+								0.68,
+								0.43820224719101125,
+								0.16
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 658723451443982,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

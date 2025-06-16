@@ -1478,6 +1478,12 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => f0(v1.GetValue(), v2.GetValue());
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(12, 15);
 		},
 		p => {
@@ -1574,7 +1580,15 @@ self.C3_ExpressionFuncs = [
 		() => "Pulse",
 		() => 1.2,
 		() => 0.2,
-		() => "PulseBack"
+		() => "PulseBack",
+		() => "Lvl1_skin",
+		() => "lvl2_skin",
+		() => "lvl3_skin",
+		() => 12,
+		() => 13,
+		() => 270,
+		() => 14,
+		() => "tea"
 ];
 
 

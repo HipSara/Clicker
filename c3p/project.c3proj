@@ -189,7 +189,14 @@
 			"Character_especial",
 			"Part_Star3",
 			"LocalStorage",
-			"JSON"
+			"JSON",
+			"Skin_book",
+			"Lvl2_skin",
+			"Skin_",
+			"slime_skin",
+			"skin_tea",
+			"skin_lumberkack1",
+			"skin_lumbrjack2"
 		],
 		"subfolders": []
 	},

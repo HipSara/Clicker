@@ -52,6 +52,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Exps.Width,
 		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.System.Exps.loopindex,
+		C3.Plugins.System.Exps.max,
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Particles.Acts.SetAngle,
@@ -70,7 +71,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.progressbar.Acts.SetProgress,
 		C3.Plugins.progressbar.Acts.SetElemAttribute,
-		C3.Plugins.System.Cnds.TriggerOnce
+		C3.Plugins.System.Cnds.TriggerOnce,
+		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.Sprite.Acts.SetAngle
 	];
 };
 self.C3_JsPropNameTable = [
@@ -137,6 +140,13 @@ self.C3_JsPropNameTable = [
 	{Part_Star3: 0},
 	{LocalStorage: 0},
 	{JSON: 0},
+	{Skin_book: 0},
+	{Lvl2_skin: 0},
+	{Skin_: 0},
+	{slime_skin: 0},
+	{skin_tea: 0},
+	{skin_lumberkack1: 0},
+	{skin_lumbrjack2: 0},
 	{ShopItems: 0},
 	{Currency: 0},
 	{TapNumber: 0},
@@ -204,5 +214,12 @@ self.InstanceType = {
 	Part_Star3: class extends self.IParticlesInstance {},
 	LocalStorage: class extends self.IInstance {},
 	JSON: class extends self.IJSONInstance {},
+	Skin_book: class extends self.ISpriteInstance {},
+	Lvl2_skin: class extends self.ISpriteInstance {},
+	Skin_: class extends self.ISpriteInstance {},
+	slime_skin: class extends self.ISpriteInstance {},
+	skin_tea: class extends self.ISpriteInstance {},
+	skin_lumberkack1: class extends self.ISpriteInstance {},
+	skin_lumbrjack2: class extends self.ISpriteInstance {},
 	ShopItems: class extends self.ISpriteInstance {}
 }
