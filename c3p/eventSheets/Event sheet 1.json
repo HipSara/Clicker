@@ -29,7 +29,7 @@
 			"eventType": "variable",
 			"name": "Multiplier",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "1.15",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -208,6 +208,26 @@
 			"sid": 646341214785390
 		},
 		{
+			"eventType": "variable",
+			"name": "isHit",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 821457212305874
+		},
+		{
+			"eventType": "variable",
+			"name": "ExtraLevels",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 619632767849337
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Init",
@@ -341,9 +361,9 @@
 						{
 							"id": "set-size",
 							"objectClass": "NivelArray",
-							"sid": 290770472668075,
+							"sid": 355245979764692,
 							"parameters": {
-								"width": "9",
+								"width": "10",
 								"height": "1",
 								"depth": "1"
 							}
@@ -1079,13 +1099,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 340694444293880,
+									"sid": 504794356607160,
 									"parameters": {
-										"first-value": "NivelTemp",
-										"comparison": 4,
-										"second-value": "10"
+										"variable": "NivelTemp",
+										"comparison": 5,
+										"value": "9"
 									}
 								}
 							],
@@ -1093,14 +1113,80 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 384316570194771,
+									"sid": 874762978035545,
 									"parameters": {
-										"variable": "NivelTemp",
-										"value": "10220*(2^NivelTemp-10)"
+										"variable": "ExtraLevels",
+										"value": "0"
 									}
 								}
 							],
-							"sid": 638258016804340
+							"sid": 638258016804340,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 758576041279624,
+											"parameters": {
+												"first-value": "NivelTemp",
+												"comparison": 4,
+												"second-value": "NivelArray.At(9)"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 981531951556806,
+											"parameters": {
+												"variable": "ClicksTemp",
+												"comparison": 5,
+												"value": "NivelArray.At(9)*(2 ^ LoopIndex)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 780897737436573,
+											"parameters": {
+												"variable": "ExtraLevels",
+												"value": "loopindex"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 787490395046199,
+											"parameters": {
+												"variable": "NivelTemp",
+												"value": "ExtraLevels+9"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 815164402460796,
+											"parameters": {
+												"variable": "Nivel",
+												"value": "NivelTemp"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 983599420831067,
+											"parameters": {
+												"variable": "ClicksNivelSiguiente",
+												"value": "NivelArray.At(9) * (2 ^ LoopIndex)"
+											}
+										}
+									],
+									"sid": 173977527941243
+								}
+							]
 						}
 					]
 				},
@@ -1166,6 +1252,34 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 813172357032787,
+							"parameters": {
+								"audio-file": "violin_win",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text_lvlUp",
+							"sid": 980395293776772,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_lvlUp",
+							"sid": 742971902577468,
+							"parameters": {
+								"text": "\"Level Up!\""
+							}
+						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -1371,6 +1485,15 @@
 							"parameters": {
 								"object": "Character_especial"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 663048496237912,
+							"parameters": {
+								"variable": "isHit"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -1390,6 +1513,15 @@
 							"parameters": {
 								"variable": "MaxCurrency",
 								"value": "ceil(Currency*0.2)"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 566504165907193,
+							"parameters": {
+								"variable": "isHit",
+								"value": "true"
 							}
 						}
 					],
@@ -1452,36 +1584,48 @@
 							}
 						},
 						{
+							"id": "set-instvar-value",
+							"objectClass": "Col_bottle",
+							"sid": 772877084021748,
+							"parameters": {
+								"instance-variable": "Price",
+								"value": "Col_bottle.BasePrice*ceil(1.15^Col_bottle.Bottle_lvl+1)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Character",
+							"sid": 375159205791549,
+							"parameters": {
+								"instance-variable": "PassiveTapCount",
+								"value": "Character.PassiveTapCount*ceil(1.15^Col_bottle.Bottle_lvl+1)"
+							}
+						},
+						{
 							"id": "add-to-instvar",
 							"objectClass": "Col_bottle",
-							"sid": 742954847750431,
+							"sid": 564798026335674,
 							"parameters": {
 								"instance-variable": "Bottle_lvl",
 								"value": "1"
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Character",
-							"sid": 140510345220109,
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 886476548189783,
 							"parameters": {
-								"instance-variable": "PassiveTapCount",
-								"value": "Character.PassiveTapCount*ceil(1.15^Col_bottle.Bottle_lvl)"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Col_bottle",
-							"sid": 275921028499437,
-							"parameters": {
-								"instance-variable": "Price",
-								"value": "Col_bottle.BasePrice*ceil(1.15^Col_bottle.Bottle_lvl)"
+								"audio-file": "collectible_v2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						},
 						{
 							"id": "set-text",
 							"objectClass": "Text_Bottle",
-							"sid": 868609700210244,
+							"sid": 287053760794241,
 							"parameters": {
 								"text": "Col_bottle.Price"
 							}
@@ -1489,25 +1633,13 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Col_bottle",
-							"sid": 981959189438802,
+							"sid": 824278928970706,
 							"parameters": {
 								"object": "Text_Bottle",
 								"layer": "0",
 								"image-point": "1",
 								"create-hierarchy": false,
 								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 715856436099248,
-							"parameters": {
-								"audio-file": "collectible_v2",
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -1556,6 +1688,24 @@
 							}
 						},
 						{
+							"id": "set-instvar-value",
+							"objectClass": "Character",
+							"sid": 871458508769447,
+							"parameters": {
+								"instance-variable": "ActiveTapCount",
+								"value": "Character.ActiveTapCount+Col_butterfly.Butterfly_lvl +1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Col_butterfly",
+							"sid": 444229631758577,
+							"parameters": {
+								"instance-variable": "Price",
+								"value": "Col_butterfly.BasePrice*ceil(1.15^Col_butterfly.Butterfly_lvl+1)"
+							}
+						},
+						{
 							"id": "add-to-instvar",
 							"objectClass": "Col_butterfly",
 							"sid": 563108726086042,
@@ -1565,21 +1715,15 @@
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Character",
-							"sid": 104016935844630,
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 676145631698088,
 							"parameters": {
-								"instance-variable": "ActiveTapCount",
-								"value": "Character.ActiveTapCount+Col_butterfly.Butterfly_lvl"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Col_butterfly",
-							"sid": 364940755098595,
-							"parameters": {
-								"instance-variable": "Price",
-								"value": "Col_butterfly.BasePrice*ceil(1.15^Col_butterfly.Butterfly_lvl)"
+								"audio-file": "collectible_v2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						},
 						{
@@ -1600,18 +1744,6 @@
 								"image-point": "1",
 								"create-hierarchy": false,
 								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 465008427996107,
-							"parameters": {
-								"audio-file": "collectible_v2",
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -1650,39 +1782,29 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 545325337478998,
-							"disabled": true,
-							"parameters": {
-								"variable": "TapNumber",
-								"value": "10"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Col_feather",
-							"sid": 814286398114847,
-							"parameters": {
-								"instance-variable": "Feather_lvl",
-								"value": "1"
-							}
-						},
-						{
 							"id": "set-instvar-value",
 							"objectClass": "Col_feather",
-							"sid": 159326537683103,
+							"sid": 666925850668552,
 							"parameters": {
-								"instance-variable": "Feather_lvl",
-								"value": "Col_feather.BasePrice*1.15^Col_feather.Feather_lvl"
+								"instance-variable": "Price",
+								"value": "Col_feather.BasePrice*ceil(1.15^Col_feather.Feather_lvl+1)"
 							}
 						},
 						{
 							"id": "set-text",
 							"objectClass": "Text_Feather",
-							"sid": 479401562239435,
+							"sid": 846173006730980,
 							"parameters": {
-								"text": "Col_feather.Price"
+								"text": "Col_feather.BasePrice*ceil(1.5^Col_feather.Feather_lvl+1)"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Col_feather",
+							"sid": 353899165351502,
+							"parameters": {
+								"instance-variable": "Feather_lvl",
+								"value": "1"
 							}
 						},
 						{
@@ -1754,13 +1876,12 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 793383728157517,
-							"disabled": true,
+							"id": "set-instvar-value",
+							"objectClass": "Col_sword",
+							"sid": 642672370662928,
 							"parameters": {
-								"variable": "Multiplier",
-								"value": "10"
+								"instance-variable": "Price",
+								"value": "Col_sword.BasePrice*ceil(1.15^Col_sword.Sword_lvl+1)"
 							}
 						},
 						{
@@ -1770,15 +1891,6 @@
 							"parameters": {
 								"instance-variable": "Sword_lvl",
 								"value": "1"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Col_sword",
-							"sid": 172624233494743,
-							"parameters": {
-								"instance-variable": "Price",
-								"value": "Col_sword.BasePrice*ceil(1.15^Col_sword.Sword_lvl)"
 							}
 						},
 						{
@@ -2336,12 +2448,16 @@
 					"sid": 899931799011656
 				},
 				{
+					"eventType": "comment",
+					"text": "no funciona"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 987534638197226,
+							"sid": 483417739304299,
 							"parameters": {
 								"variable": "Progress",
 								"comparison": 0,
@@ -2353,86 +2469,70 @@
 						{
 							"id": "set-elem-attribute",
 							"objectClass": "ProgressBar",
-							"sid": 538714783484134,
+							"sid": 374383801424222,
 							"parameters": {
 								"attribute-name": "\"background-color\"",
 								"attribute-value": "rgb(100, 0, 180)"
 							}
 						}
 					],
-					"sid": 469089566272679
-				},
-				{
-					"eventType": "comment",
-					"text": "no funciona"
+					"sid": 402418119615169,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "trigger-once-while-true",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 683386382586515
+							"sid": 431654509793083,
+							"parameters": {
+								"variable": "Progress",
+								"comparison": 4,
+								"value": "1"
+							}
 						}
 					],
-					"actions": [],
-					"sid": 364826558083412,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 775011506638039,
-									"parameters": {
-										"variable": "Progress",
-										"comparison": 4,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "tween-two-properties",
-									"objectClass": "Text_ProgressBar",
-									"sid": 881006552218458,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"Pulse\"",
-										"property": "position",
-										"end-x": "1.2",
-										"end-y": "1.2",
-										"time": "0.2",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								},
-								{
-									"id": "tween-two-properties",
-									"objectClass": "Text_ProgressBar",
-									"sid": 406389693062984,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"PulseBack\"",
-										"property": "position",
-										"end-x": "1",
-										"end-y": "1",
-										"time": "0.2",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								}
-							],
-							"sid": 729427906879019
+							"id": "tween-two-properties",
+							"objectClass": "Text_ProgressBar",
+							"sid": 146403318979131,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Pulse\"",
+								"property": "position",
+								"end-x": "1.2",
+								"end-y": "1.2",
+								"time": "0.2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Text_ProgressBar",
+							"sid": 477172768922469,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"PulseBack\"",
+								"property": "position",
+								"end-x": "1",
+								"end-y": "1",
+								"time": "0.2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
 						}
-					]
+					],
+					"sid": 433911702104037,
+					"disabled": true
 				}
 			],
 			"sid": 655019594919060

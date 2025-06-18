@@ -196,7 +196,8 @@
 			"slime_skin",
 			"skin_tea",
 			"skin_lumberkack1",
-			"skin_lumbrjack2"
+			"skin_lumbrjack2",
+			"Text_lvlUp"
 		],
 		"subfolders": []
 	},
@@ -249,6 +250,14 @@
 					"name": "collectible_v2.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 844820958796304,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "violin_win.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 333674552761847,
 					"file-info": {
 						"purpose": "none"
 					}

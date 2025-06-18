@@ -1389,10 +1389,9 @@ self.C3_ExpressionFuncs = [
 			return () => (and("You've earned ", (v0.GetValue() * v1.GetValue())) + " coins while away!");
 		},
 		() => 2,
-		() => 9,
+		() => 10,
 		() => 1,
 		() => 0,
-		() => 10,
 		() => 30,
 		() => 3,
 		() => 70,
@@ -1406,6 +1405,7 @@ self.C3_ExpressionFuncs = [
 		() => 1270,
 		() => 8,
 		() => 2550,
+		() => 9,
 		() => 5110,
 		p => {
 			const n0 = p._GetNode(0);
@@ -1469,8 +1469,17 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpObject(f1());
 		},
 		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(9);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => multiply(n0.ExpObject(9), Math.pow(2, f1()));
+		},
+		p => {
 			const v0 = p._GetNode(0).GetVar();
-			return () => (10220 * (Math.pow(2, v0.GetValue()) - 10));
+			return () => (v0.GetValue() + 9);
 		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -1482,6 +1491,7 @@ self.C3_ExpressionFuncs = [
 			const v2 = p._GetNode(2).GetVar();
 			return () => f0(v1.GetValue(), v2.GetValue());
 		},
+		() => "Level Up!",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(12, 15);
@@ -1509,17 +1519,17 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			return () => (n0.ExpInstVar() * Math.ceil(Math.pow(1.15, n1.ExpInstVar())));
+			return () => (n0.ExpInstVar() * Math.ceil((Math.pow(1.15, n1.ExpInstVar()) + 1)));
 		},
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			return () => (n0.ExpInstVar() + n1.ExpInstVar());
+			return () => ((n0.ExpInstVar() + n1.ExpInstVar()) + 1);
 		},
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			return () => (n0.ExpInstVar() * Math.pow(1.15, n1.ExpInstVar()));
+			return () => (n0.ExpInstVar() * Math.ceil((Math.pow(1.5, n1.ExpInstVar()) + 1)));
 		},
 		() => "Visual",
 		() => "Squash",
@@ -1575,12 +1585,6 @@ self.C3_ExpressionFuncs = [
 			const v1 = p._GetNode(1).GetVar();
 			return () => and(f0((v1.GetValue() * 100)), "%");
 		},
-		() => "background-color",
-		() => 11796580,
-		() => "Pulse",
-		() => 1.2,
-		() => 0.2,
-		() => "PulseBack",
 		() => "Lvl1_skin",
 		() => "lvl2_skin",
 		() => "lvl3_skin",

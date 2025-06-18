@@ -851,7 +851,7 @@
 					"sid": 229142122981988,
 					"tags": "",
 					"instanceVariables": {
-						"Bottle_lvl": 1,
+						"Bottle_lvl": 0,
 						"Price": 100,
 						"BasePrice": 100
 					},
@@ -950,7 +950,7 @@
 					"tags": "",
 					"instanceVariables": {
 						"Price": 1000,
-						"Feather_lvl": 1,
+						"Feather_lvl": 0,
 						"BasePrice": 1000
 					},
 					"behaviors": {},
@@ -999,7 +999,7 @@
 					"tags": "",
 					"instanceVariables": {
 						"Price": 2500,
-						"Sword_lvl": 1,
+						"Sword_lvl": 0,
 						"BasePrice": 2500
 					},
 					"behaviors": {},
@@ -1873,6 +1873,59 @@
 						"height": 65,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text_lvlUp",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Chicle-Regular",
+						"size": 35,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.4,
+							1,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top",
+						"read-aloud": false
+					},
+					"uid": 45,
+					"sid": 984068121593442,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 984068121593442,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 723,
+						"y": 382,
+						"width": 257,
+						"height": 76,
+						"originX": 0.5,
+						"originY": 0,
 						"color": [
 							1,
 							1,
